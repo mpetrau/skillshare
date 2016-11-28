@@ -5,3 +5,31 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'faker'
+
+Booking.destroy_all
+Offer.destroy_all
+User.destroy_all
+
+skills = %w(cooking photography paragliding programming jogging)
+seniority = %w(new junior experienced advanced expert)
+
+5.times { User.create(
+  email: Faker::Internet.email,
+  password: "password1",
+  name: Faker::Name.first_name ,
+  picture: Faker::Avatar.image )}
+
+10.times { Offer.create(
+  user_id: User.offset(rand(User.count)).first.id,
+  price: rand(15..100),
+  title: (Faker::Hipster.words(3)).join(" "),
+  description: (Faker::Hipster.sentences).join(" "),
+  seniority: seniority[rand(0..4)],
+  category: skills[rand(0..4)],
+  location: Faker::Address.city )}
+
+20.times { Booking.create(
+  user_id: User.offset(rand(User.count)).first.id,
+  offer_id: Offer.offset(rand(Offer.count)).first.id,
+  week: rand(0..52) )}

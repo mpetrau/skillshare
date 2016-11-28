@@ -7,6 +7,7 @@ class CreateOffers < ActiveRecord::Migration[5.0]
       t.string :description
       t.string :seniority
       t.string :category
+      t.string :location
 
       t.timestamps
     end
