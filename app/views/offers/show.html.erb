@@ -7,5 +7,9 @@
         <p> Category: <%= @offer.category %> </p>
         <p> Creator: <%= @offer.user.email %> </p>
     </div>
+    <div class="col-md-6 col-md-offset-3">
+      <%= render 'offers/booking_form' %>
+    </div>
   </div>
+
 </div>
