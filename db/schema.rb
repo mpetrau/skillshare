@@ -32,12 +32,15 @@ ActiveRecord::Schema.define(version: 20161128141828) do
     t.string   "description"
     t.string   "seniority"
     t.string   "category"
+    t.string   "location"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.index ["user_id"], name: "index_offers_on_user_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
+    t.string   "name"
+    t.string   "picture"
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
