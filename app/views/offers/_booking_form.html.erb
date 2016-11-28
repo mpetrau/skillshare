@@ -1,0 +1,10 @@
+<h1>Please make your booking here</h1>
+
+<%= simple_form_for [@offer, @booking] do |f| %>
+  <div class="input-group">
+    <%= f.input :week, placeholder: "week", label: false %>
+    <span class="input-group-btn"><%= f.button :submit, "Book", class: "btn btn-default" %></span>
+  </div>
+<% end  %>
+
+<h3>And here will be the money shaker :)</h3>
