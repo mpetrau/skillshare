@@ -2,14 +2,15 @@ class BookingsController < ApplicationController
   before_action :find_offer, only: [:create]
 
   def create
-    booking = @offer.bookings.build(booking_params)
-    booking.user_id = current_user
-    booking.offer = @offer
-    if booking.save
+    @booking = @offer.bookings.build(booking_params)
+    @booking.user_id = current_user.id
+    if @booking.save
       # at later time this will instead redirect to the list of all bookings
       # at later time also need to add mailer to confirm a booking
-      render 'offers/show'
+      flash[:notice] = "Post successfully created"
+      redirect_to @offer
     else
+      flash[:notice] = "Post failed"
       render 'offers/show'
     end
   end
