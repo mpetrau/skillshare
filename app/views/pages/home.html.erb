@@ -2,35 +2,12 @@
   <div class="banner-content">
     <h1>LEARN ANY SKILL AT ANY TIME</h1>
     <p>The easiest way to learn anything during your free time</p>
-    <form action="" class="form-inline">
-      <select name="" id="" class="form-control input-lg">
-      <option value="">What do you want to learn?</option>
-        <option value="">Computer Programming</option>
-        <option value="">Woodworking</option>
-        <option value="">House Cleaning</option>
-        <option value="">Babysitting</option>
-        <option value="">Dog Walking</option>
-      </select>
-<!--       <input type="text" class="form-control input-lg" placeholder="Check In">
-      <input type="text" class="form-control input-lg" placeholder="Check Out"> -->
-      <select name="" id="" class="form-control input-lg">
-        <option value="">Select Location</option>
-        <option value="">San Francisco</option>
-        <option value="">London</option>
-        <option value="">Barcelona</option>
-        <option value="">Amsterdam</option>
-        <option value="">Paris</option>
-      </select>
-      <input type="submit" class="btn btn-danger btn-lg" value="Search">
-    </form>
-    <!-- to be deleted line below! -->
-    <div class="btn btn-default"><%= link_to "all offers", offers_path %></div>
-    <!-- delete until here -->
+    <%= simple_form_for root_path, url: url_for(action: 'index', controller: 'offers'), :method => 'get', html: { class: "form-inline" } do |f| %>
+    <%= f.input :category, as: :select, collection: Offer::SKILLS_CATS, label: false, selected: "Cooking", input_html: { class: 'input-lg' } %>
+    <%= f.input :location, as: :select, collection: Offer::LOCATIONS, selected: "Barcelona", label: false, input_html: { class: 'input-lg' } %>
+    <%= f.button :submit, "Search", class: "btn btn-danger btn-lg" %>
+    <% end %>
   </div>
 </div>
 
-<%= simple_form_for root_path, url: url_for(action: 'index', controller: 'offers'), :method => 'get' do |f| %>
-  <%= f.input :category, as: :select, collection: Offer::SKILLS_CATS, placeholder: "What do you want to learn?" %>
-  <%= f.input :location, as: :select, collection: Offer::LOCATIONS, placeholder: "Select location" %>
-  <%= f.button :submit, "Search", class: "btn btn-danger btn-lg" %>
-<% end %>
+
