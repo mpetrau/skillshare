@@ -1,2 +1,27 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.4) 0%, rgba(0,36,61,0.4) 50%), url(<%= image_path "background.jpg" %>);">
+  <div class="banner-content">
+    <h1>LEARN ANY SKILL AT ANY TIME</h1>
+    <p>The easiest way to learn anything during your free time</p>
+    <form action="" class="form-inline">
+      <select name="" id="" class="form-control input-lg">
+      <option value="">What do you want to learn?</option>
+        <option value="">Computer Programming</option>
+        <option value="">Woodworking</option>
+        <option value="">House Cleaning</option>
+        <option value="">Babysitting</option>
+        <option value="">Dog Walking</option>
+      </select>
+<!--       <input type="text" class="form-control input-lg" placeholder="Check In">
+      <input type="text" class="form-control input-lg" placeholder="Check Out"> -->
+      <select name="" id="" class="form-control input-lg">
+        <option value="">Select Location</option>
+        <option value="">San Francisco</option>
+        <option value="">London</option>
+        <option value="">Barcelona</option>
+        <option value="">Amsterdam</option>
+        <option value="">Paris</option>
+      </select>
+      <input type="submit" class="btn btn-danger btn-lg" value="Search">
+    </form>
+  </div>
+</div>
