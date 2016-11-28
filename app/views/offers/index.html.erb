@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <h1> Welcome to the page with all the deals! </h1>
+      <ul>
+       <% @offers.each do |offer| %>
+          <li>
+          <p> Title: <%= offer.title %> </p>
+          <p> Description: <%= offer.description %> </p>
+          <p> Category: <%= offer.category %> </p>
+          <p> <%= link_to "Details", offer_path(offer) %> </p>
+          <% end %>
+        </li>
+        </ul>
+    </div>
+  </div>
+</div>
