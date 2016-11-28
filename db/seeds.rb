@@ -11,9 +11,6 @@ Booking.destroy_all
 Offer.destroy_all
 User.destroy_all
 
-skills = %w(cooking photography paragliding programming jogging)
-seniority = %w(new junior experienced advanced expert)
-
 5.times { User.create(
   email: Faker::Internet.email,
   password: "password1",
@@ -25,8 +22,8 @@ seniority = %w(new junior experienced advanced expert)
   price: rand(15..100),
   title: (Faker::Hipster.words(3)).join(" "),
   description: (Faker::Hipster.sentences).join(" "),
-  seniority: seniority[rand(0..4)],
-  category: skills[rand(0..4)],
+  seniority: Offer::SENIORITY[rand(0..4)],
+  category: Offer::SKILLS_CATS[rand(0..4)],
   location: Faker::Address.city )}
 
 20.times { Booking.create(

@@ -28,3 +28,9 @@
     <!-- delete until here -->
   </div>
 </div>
+
+<%= simple_form_for offers_path do |f| %>
+  <%= f.input :category, as: :select, collection: Offer::SKILLS_CATS, placeholder: "What do you want to learn?" %>
+  <%= f.input :location, as: :select, collection: Offer::LOCATIONS, placeholder: "Select location" %>
+  <%= f.button :submit, class: "btn btn-danger btn-lg", value: "Search" %>
+<% end %>
