@@ -29,8 +29,8 @@
   </div>
 </div>
 
-<%= simple_form_for offers_path do |f| %>
+<%= simple_form_for root_path, url: url_for(action: 'index', controller: 'offers'), :method => 'get' do |f| %>
   <%= f.input :category, as: :select, collection: Offer::SKILLS_CATS, placeholder: "What do you want to learn?" %>
   <%= f.input :location, as: :select, collection: Offer::LOCATIONS, placeholder: "Select location" %>
-  <%= f.button :submit, class: "btn btn-danger btn-lg", value: "Search" %>
+  <%= f.button :submit, "Search", class: "btn btn-danger btn-lg" %>
 <% end %>

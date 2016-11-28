@@ -1,6 +1,8 @@
 class OffersController < ApplicationController
   def index
-    @offers = Offer.all
+    @category = params["/"]["category"]
+    @location = params["/"]["location"]
+    @offers = Offer.where(["category = ? and location = ?", @category, @location])
   end
 
   def show

@@ -2,6 +2,8 @@
   <div class="row">
     <div class="col-md-6 col-md-offset-3">
       <h1> Welcome to the page with all the deals! </h1>
+      <p>Selected Category: <%= @category %>; Selected Location: <%= @location %> </p>
+      <hr>
       <ul>
        <% @offers.each do |offer| %>
           <li>
