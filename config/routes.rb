@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   root to: 'pages#home'
   devise_for :users
+  resource :profile, only: [:show]
   resources :offers, only: [:index, :show, :new, :create] do
     resources :bookings, only: [:create]
     end
