@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <%= image_tag @profile.picture, class: "img-responsive bordered" %>
+      <%= @profile.name %>
+
+      <h1>See your Offers</h1>
+      <ul>
+        <% @profile.offers.each do |offer| %>
+        <li>
+         <%= offer.title %>
+         <%= link_to "see offer", offer_path(offer) %>
+         <ul>
+           <p>Booked offers:</p>
+           <% offer.bookings.each do |booking| %>
+           <li>
+             <p> Week:<%= booking.week %>, with <%=  booking.user.name %></p>
+           </li>
+           <% end %>
+         </ul>
+       </li>
+       <hr>
+       <% end %>
+     </ul>
+     <h1>See your classes:</h1>
+     <ul>
+      <% @profile.bookings.each do |booking| %>
+      <li>
+      <p>Title: <%= booking.offer.title %></p>
+        <p>Organizer: <%= booking.offer.user.name %></p>
+      </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+</div>
