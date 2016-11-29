@@ -53,4 +53,16 @@ body {
   color: #FFF;
 }
 
+.booking-span{
+  padding: 10px 5px;
+  text-align: center;
+}
 
+.booking-span-red{
+  background-color: $brand-color;
+  color: white;
+}
+
+.booking-span-white{
+  background-color: white;
+}

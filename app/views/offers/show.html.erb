@@ -1,30 +1,55 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-8 background-white">
-      <div class="page-header"><h1>#<%= @offer.category.downcase %>: <%= @offer.title %></h1></div>
-        <div class="row">
-          <div class="col-md-4">
-            <%= image_tag @offer.user.picture, class: "img-responsive bordered" %>
+    <div class="col-md-8 background-white-full ">
+      <div class="padded-sides page-header">
+      <h1>#<%= @offer.category.downcase %>: <%= @offer.title %></h1>
+      </div>
+      <div class="row margin-top-md padded-sides">
+        <div class="col-md-4">
+          <%= image_tag @offer.user.picture, class: "img-responsive bordered" %>
+        </div>
+        <div class="col-md-8">
+          <dl class="dl-horizontal">
+            <dt>Creator</dt>
+            <dd><%= @offer.user.name %></dd>
+            <hr>
+            <dt>Level</dt>
+            <dd><%= @offer.seniority.capitalize %></dd>
+            <hr>
+            <dt>Description</dt>
+            <dd><%= @offer.description %></dd>
+          </dl>
+        </div>
+        </div>
+        <div class="row margin-top-md">
+          <div class="col-md-12 map">
+            <%= @offer.location %>
+            <h1>####map goes here####</h1>
           </div>
-          <div class="col-md-8">
-            <dl class="dl-horizontal">
-              <dt>Creator</dt>
-              <dd><%= @offer.user.name %></dd>
-              <hr>
-              <dt>Level</dt>
-              <dd><%= @offer.seniority.capitalize %></dd>
-              <hr>
-              <dt>Description</dt>
-              <dd><%= @offer.description %></dd>
-            </dl>
-          </div>
+        </div>
     </div>
-    </div>
-    <div class="col-md-3 col-md-offset-1">
-      <%= render 'offers/booking_form' %>
+    <div>
+      <div class="col-md-3 col-md-offset-1 margin-top-md">
+        <div class="booking-span booking-span-red">
+          <h3 >Make a booking!</h3>
+        </div>
+        <div class = "booking-span booking-span-white">
+          <dl class="dl-horizontal text-left margin-top-sm">
+            <dt>Price</dt>
+            <dd><%= @offer.price %></dd>
+            <dt>Commission</dt>
+            <dd><%= @offer.charge_commission %></dd>
+            <hr>
+            <dt>Total</dt>
+            <dd><%= @offer.charge_price %></dd>
+            <hr>
+          </dl>
+        </div>
+        <div class = "booking-span booking-span-white">
+        <%= render 'offers/booking_form' %>
+        </div>
+      </div>
     </div>
   </div>
 
-</div>
 
-<p> Location: <%= @offer.location %> </p>

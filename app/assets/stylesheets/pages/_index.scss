@@ -13,5 +13,22 @@
 .background-white{
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
   background: white;
+}
+
+.background-white-full{
+  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
+  background: white;
   height: 100vh;
+}
+
+.margin-top-sm{
+  margin-top: 20px;
+}
+
+.margin-top-md{
+  margin-top: 50px;
+}
+
+.padded-sides{
+  padding: 0 50px;
 }
