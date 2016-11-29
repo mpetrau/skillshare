@@ -1,10 +1,14 @@
 <div class="container">
   <div class="row">
     <div class="col-md-8 col-md-offset-3">
-      <div class="page-header"><h1>What will you learn today?</h1></div>
+
       <% if @offers.empty? %>
-      <p> Unfortunately, no offers matching your selection </p>
+      <div class="page-header-colorless">
+      <h4><i class="fa fa-frown-o" aria-hidden="true"></i> unfortunately, no offers matching your selection...</h4>
+      <h4> Try something differet, or check-in later! </h4>
+      </div>
       <% else %>
+      <div class="page-header"><h1>What will you learn today?</h1></div>
       <% @offers.each do |offer| %>
       <div class="product">
         <%= image_tag offer.user.picture, class: "product-image hidden-xs"  %>
