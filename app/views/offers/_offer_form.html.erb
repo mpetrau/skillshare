@@ -1,0 +1,9 @@
+<%= simple_form_for @offer do |f| %>
+<%= f.input :category, as: :select, collection: Offer::SKILLS_CATS %>
+<%= f.input :title %>
+<%= f.input :description %>
+<%= f.input :seniority, as: :select, collection: Offer::SENIORITY %>
+<%= f.input :price %>
+<%= f.input :location, as: :select, collection: Offer::LOCATIONS %>
+<%= f.button :submit %>
+<% end %>
