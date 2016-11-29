@@ -1,23 +1,28 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-6 col-md-offset-3">
+    <div class="col-md-8 col-md-offset-3">
       <h1> Welcome to the page with all the deals! </h1>
       <p>Selected Category: <%= @category %>; Selected Location: <%= @location %> </p>
       <hr>
       <% if @offers.empty? %>
-        <p> Unfortunately, no offers matching your selection </p>
+      <p> Unfortunately, no offers matching your selection </p>
       <% else %>
-      <ul>
-       <% @offers.each do |offer| %>
-          <li>
-          <p> Title: <%= offer.title %> </p>
-          <p> Description: <%= offer.description %> </p>
-          <p> Category: <%= offer.category %> </p>
-          <p> <%= link_to "Details", offer_path(offer) %> </p>
-          <% end %>
-        </li>
-        </ul>
-        <% end %>
+      <% @offers.each do |offer| %>
+      <div class="product">
+        <%= image_tag offer.user.picture, class: "product-image hidden-xs"  %>
+        <div class='product-body'>
+          <h3><%= offer.title.upcase %></h3>
+          <p><%= truncate offer.description, length: 100 %>...</p>
+        </div>
+<!--         <ul class="list-inline product-controls product-controls-hidden hidden-sm hidden-xs">
+          <li><a href=""><i class="fa fa-heart"></i></a></li>
+          <li><a href=""><i class="fa fa-share"></i></a></li>
+          <li><a href=""><i class="fa fa-star"></i></a></li>
+        </ul> -->
+        <%= link_to '', offer_path(offer), class: "card-link" %>
+      </div>
+      <% end %>
+      <% end %>
     </div>
   </div>
 </div>
