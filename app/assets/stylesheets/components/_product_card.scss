@@ -5,6 +5,17 @@
   border-radius: 3px;
   transition: all 0.15s ease;
   background-color: white;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.card-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  z-index: 2;
 }
 
 /* Body design */
@@ -66,14 +77,6 @@
   color: #E6E6E6;
 }
 
-.card-link {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  width: 100%;
-}
-
 .product-controls a:hover {
   color: #D3473C !important
 }
@@ -82,13 +85,12 @@
   font-size: 15px;
   transition: all 0.15s ease;
   border-color: transparent;
-  z-index: 2;
 }
 
 /* Hover effects */
 .product:hover {
   cursor: pointer;
-  box-shadow: 1px 1px 5px red;
+  box-shadow: 1px 1px 5px $brand-color;
   transform: scale(1.1)
 }
 .product-upvote:hover, .product-upvote.product-upvote-upvoted {
