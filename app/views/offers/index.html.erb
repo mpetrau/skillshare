@@ -1,23 +1,30 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-6 col-md-offset-3">
-      <h1> Welcome to the page with all the deals! </h1>
-      <p>Selected Category: <%= @category %>; Selected Location: <%= @location %> </p>
-      <hr>
+    <div class="col-md-8 col-md-offset-3">
+
       <% if @offers.empty? %>
-        <p> Unfortunately, no offers matching your selection </p>
+      <div class="page-header-colorless">
+      <h4><i class="fa fa-frown-o" aria-hidden="true"></i> unfortunately, no offers matching your selection...</h4>
+      <h4> Try something differet, or check-in later! </h4>
+      </div>
       <% else %>
-      <ul>
-       <% @offers.each do |offer| %>
-          <li>
-          <p> Title: <%= offer.title %> </p>
-          <p> Description: <%= offer.description %> </p>
-          <p> Category: <%= offer.category %> </p>
-          <p> <%= link_to "Details", offer_path(offer) %> </p>
-          <% end %>
-        </li>
-        </ul>
-        <% end %>
+      <div class="page-header"><h1>What will you learn today?</h1></div>
+      <% @offers.each do |offer| %>
+      <div class="product">
+        <%= image_tag offer.user.picture, class: "product-image hidden-xs"  %>
+        <div class='product-body'>
+          <h3><%= offer.title.upcase %></h3>
+          <p><%= truncate offer.description, length: 100 %>...</p>
+        </div>
+<!--         <ul class="list-inline product-controls product-controls-hidden hidden-sm hidden-xs">
+          <li><a href=""><i class="fa fa-heart"></i></a></li>
+          <li><a href=""><i class="fa fa-share"></i></a></li>
+          <li><a href=""><i class="fa fa-star"></i></a></li>
+        </ul> -->
+        <%= link_to '', offer_path(offer), class: "card-link" %>
+      </div>
+      <% end %>
+      <% end %>
     </div>
   </div>
 </div>
