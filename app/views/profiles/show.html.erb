@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-10 col-md-offset-1">
-      <%= image_tag @profile.photo, class: "img-responsive bordered" %>
+      <%= image_tag @profile.photo.url(:standard_face), class: "img-responsive bordered" %>
       <%= @profile.name %>
 
       <h1>See your Offers</h1>

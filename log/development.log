@@ -31676,3 +31676,365 @@ Processing by ProfilesController#show as HTML
 Completed 200 OK in 104ms (Views: 94.1ms | ActiveRecord: 5.6ms)
 
 
+Started GET "/offers?utf8=%E2%9C%93&%2Foffers%5Bcategory%5D=Cooking&%2Foffers%5Blocation%5D=Barcelona&commit=Search" for ::1 at 2016-11-29 22:32:35 +0100
+
+ArgumentError - wrong number of arguments (given 3, expected 2):
+  /usr/local/Cellar/rbenv/1.0.0/versions/2.3.1/lib/ruby/gems/2.3.0/gems/cloudinary-1.1.0/lib/cloudinary/carrier_wave/process.rb:24:in `resize_to_fit'
+  app/uploaders/photo_uploader.rb:9:in `block in <class:PhotoUploader>'
+  carrierwave (0.11.2) lib/carrierwave/uploader/versions.rb:55:in `class_eval'
+  carrierwave (0.11.2) lib/carrierwave/uploader/versions.rb:55:in `version'
+  app/uploaders/photo_uploader.rb:8:in `<class:PhotoUploader>'
+  app/uploaders/photo_uploader.rb:1:in `<top (required)>'
+  activesupport (5.0.0.1) lib/active_support/dependencies.rb:477:in `load'
+  activesupport (5.0.0.1) lib/active_support/dependencies.rb:477:in `block in load_file'
+  activesupport (5.0.0.1) lib/active_support/dependencies.rb:662:in `new_constants_in'
+  activesupport (5.0.0.1) lib/active_support/dependencies.rb:476:in `load_file'
+  activesupport (5.0.0.1) lib/active_support/dependencies.rb:375:in `block in require_or_load'
+  activesupport (5.0.0.1) lib/active_support/dependencies.rb:37:in `block in load_interlock'
+  activesupport (5.0.0.1) lib/active_support/dependencies/interlock.rb:12:in `block in loading'
+  activesupport (5.0.0.1) lib/active_support/concurrency/share_lock.rb:117:in `exclusive'
+  activesupport (5.0.0.1) lib/active_support/dependencies/interlock.rb:11:in `loading'
+  activesupport (5.0.0.1) lib/active_support/dependencies.rb:37:in `load_interlock'
+  activesupport (5.0.0.1) lib/active_support/dependencies.rb:358:in `require_or_load'
+  activesupport (5.0.0.1) lib/active_support/dependencies.rb:511:in `load_missing_constant'
+  activesupport (5.0.0.1) lib/active_support/dependencies.rb:203:in `const_missing'
+  activesupport (5.0.0.1) lib/active_support/dependencies.rb:543:in `load_missing_constant'
+  activesupport (5.0.0.1) lib/active_support/dependencies.rb:203:in `const_missing'
+  app/models/user.rb:9:in `<class:User>'
+  app/models/user.rb:1:in `<top (required)>'
+  activesupport (5.0.0.1) lib/active_support/dependencies.rb:477:in `load'
+  activesupport (5.0.0.1) lib/active_support/dependencies.rb:477:in `block in load_file'
+  activesupport (5.0.0.1) lib/active_support/dependencies.rb:662:in `new_constants_in'
+  activesupport (5.0.0.1) lib/active_support/dependencies.rb:476:in `load_file'
+  activesupport (5.0.0.1) lib/active_support/dependencies.rb:375:in `block in require_or_load'
+  activesupport (5.0.0.1) lib/active_support/dependencies.rb:37:in `block in load_interlock'
+  activesupport (5.0.0.1) lib/active_support/dependencies/interlock.rb:12:in `block in loading'
+  activesupport (5.0.0.1) lib/active_support/concurrency/share_lock.rb:117:in `exclusive'
+  activesupport (5.0.0.1) lib/active_support/dependencies/interlock.rb:11:in `loading'
+  activesupport (5.0.0.1) lib/active_support/dependencies.rb:37:in `load_interlock'
+  activesupport (5.0.0.1) lib/active_support/dependencies.rb:358:in `require_or_load'
+  activesupport (5.0.0.1) lib/active_support/dependencies.rb:511:in `load_missing_constant'
+  activesupport (5.0.0.1) lib/active_support/dependencies.rb:203:in `const_missing'
+  activesupport (5.0.0.1) lib/active_support/inflector/methods.rb:268:in `const_get'
+  activesupport (5.0.0.1) lib/active_support/inflector/methods.rb:268:in `block in constantize'
+  activesupport (5.0.0.1) lib/active_support/inflector/methods.rb:266:in `each'
+  activesupport (5.0.0.1) lib/active_support/inflector/methods.rb:266:in `inject'
+  activesupport (5.0.0.1) lib/active_support/inflector/methods.rb:266:in `constantize'
+  activesupport (5.0.0.1) lib/active_support/dependencies.rb:583:in `get'
+  activesupport (5.0.0.1) lib/active_support/dependencies.rb:614:in `constantize'
+  devise (4.2.0) lib/devise.rb:301:in `get'
+  devise (4.2.0) lib/devise/mapping.rb:81:in `to'
+  devise (4.2.0) lib/devise/mapping.rb:76:in `modules'
+  devise (4.2.0) lib/devise/mapping.rb:93:in `routes'
+  devise (4.2.0) lib/devise/mapping.rb:160:in `default_used_route'
+  devise (4.2.0) lib/devise/mapping.rb:70:in `initialize'
+  devise (4.2.0) lib/devise.rb:331:in `new'
+  devise (4.2.0) lib/devise.rb:331:in `add_mapping'
+  devise (4.2.0) lib/devise/rails/routes.rb:241:in `block in devise_for'
+  devise (4.2.0) lib/devise/rails/routes.rb:240:in `each'
+  devise (4.2.0) lib/devise/rails/routes.rb:240:in `devise_for'
+  config/routes.rb:5:in `block in <top (required)>'
+  actionpack (5.0.0.1) lib/action_dispatch/routing/route_set.rb:389:in `instance_exec'
+  actionpack (5.0.0.1) lib/action_dispatch/routing/route_set.rb:389:in `eval_block'
+  actionpack (5.0.0.1) lib/action_dispatch/routing/route_set.rb:371:in `draw'
+  config/routes.rb:1:in `<top (required)>'
+  activesupport (5.0.0.1) lib/active_support/dependencies.rb:287:in `load'
+  activesupport (5.0.0.1) lib/active_support/dependencies.rb:287:in `block in load'
+  activesupport (5.0.0.1) lib/active_support/dependencies.rb:259:in `load_dependency'
+  activesupport (5.0.0.1) lib/active_support/dependencies.rb:287:in `load'
+  railties (5.0.0.1) lib/rails/application/routes_reloader.rb:40:in `block in load_paths'
+  railties (5.0.0.1) lib/rails/application/routes_reloader.rb:40:in `each'
+  railties (5.0.0.1) lib/rails/application/routes_reloader.rb:40:in `load_paths'
+  railties (5.0.0.1) lib/rails/application/routes_reloader.rb:16:in `reload!'
+  railties (5.0.0.1) lib/rails/application/routes_reloader.rb:26:in `block in updater'
+  activesupport (5.0.0.1) lib/active_support/file_update_checker.rb:77:in `execute'
+  railties (5.0.0.1) lib/rails/application/routes_reloader.rb:7:in `execute'
+  railties (5.0.0.1) lib/rails/application/finisher.rb:132:in `block (2 levels) in <module:Finisher>'
+  activesupport (5.0.0.1) lib/active_support/callbacks.rb:396:in `instance_exec'
+  activesupport (5.0.0.1) lib/active_support/callbacks.rb:396:in `block in make_lambda'
+  activesupport (5.0.0.1) lib/active_support/callbacks.rb:169:in `block (2 levels) in halting'
+  activesupport (5.0.0.1) lib/active_support/callbacks.rb:547:in `block (2 levels) in default_terminator'
+  activesupport (5.0.0.1) lib/active_support/callbacks.rb:546:in `catch'
+  activesupport (5.0.0.1) lib/active_support/callbacks.rb:546:in `block in default_terminator'
+  activesupport (5.0.0.1) lib/active_support/callbacks.rb:170:in `block in halting'
+  activesupport (5.0.0.1) lib/active_support/callbacks.rb:454:in `block in call'
+  activesupport (5.0.0.1) lib/active_support/callbacks.rb:454:in `each'
+  activesupport (5.0.0.1) lib/active_support/callbacks.rb:454:in `call'
+  activesupport (5.0.0.1) lib/active_support/callbacks.rb:101:in `__run_callbacks__'
+  activesupport (5.0.0.1) lib/active_support/callbacks.rb:750:in `_run_run_callbacks'
+  activesupport (5.0.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+  activesupport (5.0.0.1) lib/active_support/execution_wrapper.rb:99:in `run!'
+  activesupport (5.0.0.1) lib/active_support/reloader.rb:113:in `run!'
+  activesupport (5.0.0.1) lib/active_support/execution_wrapper.rb:61:in `block in run!'
+  activesupport (5.0.0.1) lib/active_support/execution_wrapper.rb:58:in `tap'
+  activesupport (5.0.0.1) lib/active_support/execution_wrapper.rb:58:in `run!'
+  activesupport (5.0.0.1) lib/active_support/reloader.rb:59:in `run!'
+  actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:10:in `call'
+  actionpack (5.0.0.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+  actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+  railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+  railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+  activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+  activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+  railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+  sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+  actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+  rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+  rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+  activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+  actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+  rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+  railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+  puma (3.6.2) lib/puma/configuration.rb:225:in `call'
+  puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
+  puma (3.6.2) lib/puma/server.rb:415:in `process_client'
+  puma (3.6.2) lib/puma/server.rb:275:in `block in run'
+  puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+
+Started POST "/__better_errors/92e008073d3ce440/variables" for ::1 at 2016-11-29 22:32:35 +0100
+Started DELETE "/users/sign_out" for ::1 at 2016-11-29 22:40:15 +0100
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"2b0OdreqybaEp5YWm5TyGbk2RaCK6REApDWyjqpyb18GEoGJwEBnQoSYgIYL3QMdyu2GOKEA6dfKICjManGjbQ=="}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 25ms (ActiveRecord: 4.5ms)
+
+
+Started GET "/" for ::1 at 2016-11-29 22:40:16 +0100
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered shared/_search_form.html.erb (12.7ms)
+  Rendered pages/home.html.erb within layouts/application (17.1ms)
+  Rendered shared/_navbar.html.erb (3.7ms)
+  Rendered shared/_flashes.html.erb (0.5ms)
+Completed 200 OK in 57ms (Views: 55.5ms | ActiveRecord: 0.0ms)
+
+
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+Started GET "/users/sign_in" for ::1 at 2016-11-29 22:45:51 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (28.7ms)
+  Rendered shared/_navbar.html.erb (2.5ms)
+  Rendered shared/_flashes.html.erb (0.5ms)
+Completed 200 OK in 61ms (Views: 59.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2016-11-29 22:45:53 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.5ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (20.6ms)
+  Rendered shared/_navbar.html.erb (1.9ms)
+  Rendered shared/_flashes.html.erb (0.4ms)
+Completed 200 OK in 48ms (Views: 47.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2016-11-29 22:46:14 +0100
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"o9/PY3nZFHSOhx1YTokSo2gYaKWzhip5KT+yq2DnQmAtnMvQ3e/01RdBmWLlnVnhtVuHeDd+piwP47mi5VruFg==", "user"=>{"email"=>"m@m.m", "name"=>"mykolas", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "photo"=>#<ActionDispatch::Http::UploadedFile:0x007fd0f948f040 @tempfile=#<Tempfile:/var/folders/ym/ls02j31j59j4h56yc65wbcg40000gn/T/RackMultipart20161129-51842-oneinj.jpg>, @original_filename="IMG_9814.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"user[photo]\"; filename=\"IMG_9814.jpg\"\r\nContent-Type: image/jpeg\r\n">, "photo_cache"=>""}, "commit"=>"Sign Up"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (2.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "m@m.m"], ["LIMIT", 1]]
+  [1m[35mSQL (6.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "photo", "email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "mykolas"], ["photo", "ctwb1um4so4uvjisvw29.jpg"], ["email", "m@m.m"], ["encrypted_password", "$2a$11$XmABlpEfBmQfc1w1rZFdxelJETyMFMBeHeiS.YZm1gbH7E1qet5ZO"], ["created_at", 2016-11-29 21:46:14 UTC], ["updated_at", 2016-11-29 21:46:14 UTC]]
+  [1m[35mSQL (0.9ms)[0m  [1m[33mUPDATE "users" SET "photo" = 'image/upload/v1480455976/ctwb1um4so4uvjisvw29.jpg' WHERE "users"."id" = $1[0m  [["id", 15]]
+  [1m[35m (12.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "photo" = $1, "sign_in_count" = $2, "current_sign_in_at" = $3, "last_sign_in_at" = $4, "current_sign_in_ip" = $5, "last_sign_in_ip" = $6, "updated_at" = $7 WHERE "users"."id" = $8[0m  [["photo", "v1480455976/ctwb1um4so4uvjisvw29.jpg"], ["sign_in_count", 1], ["current_sign_in_at", 2016-11-29 21:46:16 UTC], ["last_sign_in_at", 2016-11-29 21:46:16 UTC], ["current_sign_in_ip", "::1/128"], ["last_sign_in_ip", "::1/128"], ["updated_at", 2016-11-29 21:46:16 UTC], ["id", 15]]
+  [1m[35m (5.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 2148ms (ActiveRecord: 29.8ms)
+
+
+Started GET "/" for ::1 at 2016-11-29 22:46:16 +0100
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered shared/_search_form.html.erb (6.3ms)
+  Rendered pages/home.html.erb within layouts/application (10.8ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  Rendered shared/_navbar.html.erb (6.2ms)
+  Rendered shared/_flashes.html.erb (1.1ms)
+Completed 200 OK in 49ms (Views: 46.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/profile" for ::1 at 2016-11-29 22:46:23 +0100
+Processing by ProfilesController#show as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  Rendering profiles/show.html.erb within layouts/application
+  [1m[36mOffer Load (0.4ms)[0m  [1m[34mSELECT "offers".* FROM "offers" WHERE "offers"."user_id" = $1[0m  [["user_id", 15]]
+  [1m[36mBooking Load (0.3ms)[0m  [1m[34mSELECT "bookings".* FROM "bookings" WHERE "bookings"."user_id" = $1[0m  [["user_id", 15]]
+  Rendered profiles/show.html.erb within layouts/application (15.0ms)
+  Rendered shared/_navbar.html.erb (3.2ms)
+  Rendered shared/_flashes.html.erb (0.5ms)
+Completed 200 OK in 47ms (Views: 39.7ms | ActiveRecord: 3.7ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2016-11-29 22:51:42 +0100
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"sk2fFDqaV+HzQNV08vi+9HCcSow393RfYTOZ6cQH4zM8Dpunnqy3QGqGUU5Z7PW2rd+lUbMP+ApH75LgQbpPRQ=="}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 13ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2016-11-29 22:51:42 +0100
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered shared/_search_form.html.erb (10.7ms)
+  Rendered pages/home.html.erb within layouts/application (14.9ms)
+  Rendered shared/_navbar.html.erb (3.5ms)
+  Rendered shared/_flashes.html.erb (0.6ms)
+Completed 200 OK in 51ms (Views: 48.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-11-29 22:51:43 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (13.5ms)
+  Rendered shared/_navbar.html.erb (3.5ms)
+  Rendered shared/_flashes.html.erb (0.7ms)
+Completed 200 OK in 57ms (Views: 55.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2016-11-29 22:51:45 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.9ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (16.8ms)
+  Rendered shared/_navbar.html.erb (2.6ms)
+  Rendered shared/_flashes.html.erb (0.4ms)
+Completed 200 OK in 53ms (Views: 51.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2016-11-29 22:52:08 +0100
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5ED1+0tZAF0okMSx9CWTAGTpt7amiSnujQPkunyhV1QHg63cj+Yxg8K6WLkf4xPoBhbeAV0wZWP4qoZPC1rI2g==", "user"=>{"email"=>"my@my.my", "name"=>"merer", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "photo"=>#<ActionDispatch::Http::UploadedFile:0x007fd0fb2f5930 @tempfile=#<Tempfile:/var/folders/ym/ls02j31j59j4h56yc65wbcg40000gn/T/RackMultipart20161129-51842-yawwdi.jpg>, @original_filename="IMG_6426.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"user[photo]\"; filename=\"IMG_6426.jpg\"\r\nContent-Type: image/jpeg\r\n">, "photo_cache"=>""}, "commit"=>"Sign Up"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "my@my.my"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "photo", "email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "merer"], ["photo", "c80ve99eal4vsv31ovuu.jpg"], ["email", "my@my.my"], ["encrypted_password", "$2a$11$ssWHgVnNY2/HeM3PnGih5OWgmYNn8DLU5Zv/nCyIl5DX/FTy8xOUG"], ["created_at", 2016-11-29 21:52:08 UTC], ["updated_at", 2016-11-29 21:52:08 UTC]]
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "photo" = 'image/upload/v1480456330/c80ve99eal4vsv31ovuu.jpg' WHERE "users"."id" = $1[0m  [["id", 16]]
+  [1m[35m (6.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "users" SET "photo" = $1, "sign_in_count" = $2, "current_sign_in_at" = $3, "last_sign_in_at" = $4, "current_sign_in_ip" = $5, "last_sign_in_ip" = $6, "updated_at" = $7 WHERE "users"."id" = $8[0m  [["photo", "v1480456330/c80ve99eal4vsv31ovuu.jpg"], ["sign_in_count", 1], ["current_sign_in_at", 2016-11-29 21:52:10 UTC], ["last_sign_in_at", 2016-11-29 21:52:10 UTC], ["current_sign_in_ip", "::1/128"], ["last_sign_in_ip", "::1/128"], ["updated_at", 2016-11-29 21:52:10 UTC], ["id", 16]]
+  [1m[35m (6.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 2017ms (ActiveRecord: 15.4ms)
+
+
+Started GET "/" for ::1 at 2016-11-29 22:52:10 +0100
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered shared/_search_form.html.erb (7.3ms)
+  Rendered pages/home.html.erb within layouts/application (11.0ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  Rendered shared/_navbar.html.erb (9.8ms)
+  Rendered shared/_flashes.html.erb (0.7ms)
+Completed 200 OK in 52ms (Views: 49.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/profile" for ::1 at 2016-11-29 22:52:14 +0100
+Processing by ProfilesController#show as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering profiles/show.html.erb within layouts/application
+  [1m[36mOffer Load (0.3ms)[0m  [1m[34mSELECT "offers".* FROM "offers" WHERE "offers"."user_id" = $1[0m  [["user_id", 16]]
+  [1m[36mBooking Load (0.5ms)[0m  [1m[34mSELECT "bookings".* FROM "bookings" WHERE "bookings"."user_id" = $1[0m  [["user_id", 16]]
+  Rendered profiles/show.html.erb within layouts/application (14.9ms)
+  Rendered shared/_navbar.html.erb (3.1ms)
+  Rendered shared/_flashes.html.erb (0.5ms)
+Completed 200 OK in 48ms (Views: 43.4ms | ActiveRecord: 1.1ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2016-11-29 22:56:56 +0100
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"7B964YufP0k2QUscLlk7Y7QcurW+r1sgTACXkqTskKcP3CLGTyAOl9xr1xTFn7uL1uPTAkUWF605qfVn0xcPKQ=="}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 15ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2016-11-29 22:56:56 +0100
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered shared/_search_form.html.erb (15.2ms)
+  Rendered pages/home.html.erb within layouts/application (19.8ms)
+  Rendered shared/_navbar.html.erb (2.8ms)
+  Rendered shared/_flashes.html.erb (1.2ms)
+Completed 200 OK in 58ms (Views: 56.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-11-29 22:57:02 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (15.6ms)
+  Rendered shared/_navbar.html.erb (3.2ms)
+  Rendered shared/_flashes.html.erb (0.5ms)
+Completed 200 OK in 49ms (Views: 48.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2016-11-29 22:57:04 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (23.5ms)
+  Rendered shared/_navbar.html.erb (2.1ms)
+  Rendered shared/_flashes.html.erb (0.5ms)
+Completed 200 OK in 54ms (Views: 52.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2016-11-29 22:57:27 +0100
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Okzr0uZSJTWBPA7eZHOPi22surtDWRQE/27ULfOcdC9DbGhtr9krVOu4PNRjlXK6jWdGypEUPSxzmsJE0T5cQQ==", "user"=>{"email"=>"m@fdg.dsafasdf", "name"=>"msfak;", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "photo"=>#<ActionDispatch::Http::UploadedFile:0x007fd0fb0d6500 @tempfile=#<Tempfile:/var/folders/ym/ls02j31j59j4h56yc65wbcg40000gn/T/RackMultipart20161129-51842-1oeq9m3.jpg>, @original_filename="mykolas.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"user[photo]\"; filename=\"mykolas.jpg\"\r\nContent-Type: image/jpeg\r\n">, "photo_cache"=>""}, "commit"=>"Sign Up"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "m@fdg.dsafasdf"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "photo", "email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "msfak;"], ["photo", "wiknlhrqvvavb8xqs81g.jpg"], ["email", "m@fdg.dsafasdf"], ["encrypted_password", "$2a$11$87ZiT8fK06ia1z0qq.x8/OhmzGK2TXsbk8QAwAVVsCTPSChoghW2a"], ["created_at", 2016-11-29 21:57:28 UTC], ["updated_at", 2016-11-29 21:57:28 UTC]]
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "photo" = 'image/upload/v1480456649/wiknlhrqvvavb8xqs81g.jpg' WHERE "users"."id" = $1[0m  [["id", 17]]
+  [1m[35m (6.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "users" SET "photo" = $1, "sign_in_count" = $2, "current_sign_in_at" = $3, "last_sign_in_at" = $4, "current_sign_in_ip" = $5, "last_sign_in_ip" = $6, "updated_at" = $7 WHERE "users"."id" = $8[0m  [["photo", "v1480456649/wiknlhrqvvavb8xqs81g.jpg"], ["sign_in_count", 1], ["current_sign_in_at", 2016-11-29 21:57:30 UTC], ["last_sign_in_at", 2016-11-29 21:57:30 UTC], ["current_sign_in_ip", "::1/128"], ["last_sign_in_ip", "::1/128"], ["updated_at", 2016-11-29 21:57:30 UTC], ["id", 17]]
+  [1m[35m (6.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 2708ms (ActiveRecord: 15.5ms)
+
+
+Started GET "/" for ::1 at 2016-11-29 22:57:30 +0100
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered shared/_search_form.html.erb (5.4ms)
+  Rendered pages/home.html.erb within layouts/application (9.4ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendered shared/_navbar.html.erb (6.6ms)
+  Rendered shared/_flashes.html.erb (0.6ms)
+Completed 200 OK in 40ms (Views: 38.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/profile" for ::1 at 2016-11-29 22:57:34 +0100
+Processing by ProfilesController#show as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering profiles/show.html.erb within layouts/application
+  [1m[36mOffer Load (0.3ms)[0m  [1m[34mSELECT "offers".* FROM "offers" WHERE "offers"."user_id" = $1[0m  [["user_id", 17]]
+  [1m[36mBooking Load (0.3ms)[0m  [1m[34mSELECT "bookings".* FROM "bookings" WHERE "bookings"."user_id" = $1[0m  [["user_id", 17]]
+  Rendered profiles/show.html.erb within layouts/application (12.6ms)
+  Rendered shared/_navbar.html.erb (3.5ms)
+  Rendered shared/_flashes.html.erb (0.6ms)
+Completed 200 OK in 51ms (Views: 46.8ms | ActiveRecord: 1.0ms)
+
+
