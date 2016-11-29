@@ -6,7 +6,7 @@ class Offer < ApplicationRecord
 
   belongs_to :user
   has_many :bookings
-  before_destroy :check_for_bookings
+  # before_destroy :check_for_bookings
   validates :user, :price, :title, :description, :seniority, :category, :location, presence: true
   validates :price, numericality: { only_integer: true }
   validates_inclusion_of :seniority, in: SENIORITY
@@ -22,11 +22,11 @@ class Offer < ApplicationRecord
 
   private
 
-  def check_for_bookings
-    unless bookings.nil?
-      flash[:warning] = "Cannot delete offer when bookings are still pending, pleas cancel your bookings first"
-    end
-  end
+  # def check_for_bookings
+  #   unless bookings.nil?
+  #     flash[:warning] = "Cannot delete offer when bookings are still pending, pleas cancel your bookings first"
+  #   end
+  # end
 
   def commission_fee
     0.1

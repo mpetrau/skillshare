@@ -6,7 +6,7 @@
       </div>
       <div class="row margin-top-md padded-sides">
         <div class="col-md-4">
-          <%= image_tag @offer.user.picture, class: "img-responsive bordered" %>
+          <%= image_tag @offer.user.photo.url(:standard_face), class: "img-responsive bordered" %>
         </div>
         <div class="col-md-8">
           <dl class="dl-horizontal">
