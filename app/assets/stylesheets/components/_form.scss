@@ -6,6 +6,22 @@ body {
   background: #EAEAEA;
 }
 
+#sidebar-form {
+  width:250px;
+}
+
+#sidebar-form .select {
+  height: 25px;
+  padding: 2px;
+  font-size: 13px;
+}
+
+#sidebar-form .btn {
+  height: 25px;
+  padding: 2px;
+  font-size: 13px;
+}
+
 .form-container {
   max-width: 400px;
   width: 100%;
