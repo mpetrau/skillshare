@@ -13,7 +13,7 @@ class Offer < ApplicationRecord
   validates_inclusion_of :category, in: SKILLS_CATS
 
   def charge_commission
-    self.price * commission_fee
+    (self.price * commission_fee).round(1)
   end
 
   def charge_price
