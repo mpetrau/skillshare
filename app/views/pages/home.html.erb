@@ -1,12 +1,8 @@
 <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.4) 0%, rgba(0,36,61,0.4) 50%), url(<%= image_path "background.jpg" %>);">
-  <div class="banner-content">
+  <div class="banner-content text-inline">
     <h1>LEARN ANY SKILL AT ANY TIME</h1>
     <p>The easiest way to learn anything during your free time</p>
-    <%= simple_form_for root_path, url: url_for(action: 'index', controller: 'offers'), :method => 'get', html: { class: "form-inline" } do |f| %>
-    <%= f.input :category, as: :select, collection: Offer::SKILLS_CATS, label: false, selected: "Cooking", input_html: { class: 'input-lg' } %>
-    <%= f.input :location, as: :select, collection: Offer::LOCATIONS, selected: "Barcelona", label: false, input_html: { class: 'input-lg' } %>
-    <%= f.button :submit, "Search", class: "btn btn-danger btn-lg" %>
-    <% end %>
+    <div class="form-inline"><%= render 'shared/search_form' %></div>
   </div>
 </div>
 

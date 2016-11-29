@@ -1,7 +1,7 @@
 class OffersController < ApplicationController
   def index
-    @category = params["/"]["category"]
-    @location = params["/"]["location"]
+    @category = params["/offers"]["category"]
+    @location = params["/offers"]["location"]
     @offers = Offer.where(["category = ? and location = ?", @category, @location])
   end
 
