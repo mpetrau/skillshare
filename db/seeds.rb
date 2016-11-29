@@ -15,7 +15,7 @@ User.destroy_all
   email: Faker::Internet.email,
   password: "password1",
   name: Faker::Name.first_name ,
-  picture: Faker::Avatar.image )}
+  photo: Faker::Avatar.image )}
 
 50.times { Offer.create(
   user_id: User.offset(rand(User.count)).first.id,

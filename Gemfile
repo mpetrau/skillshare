@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+ source 'https://rubygems.org'
 ruby '2.3.1'
 
 gem 'rails', '5.0.0.1'
@@ -9,6 +9,8 @@ gem 'jbuilder', '~> 2.0'
 gem 'devise'
 gem 'redis'
 gem 'faker'
+gem 'cloudinary', '1.1.0'
+gem 'carrierwave'
 
 gem 'sass-rails'
 gem 'jquery-rails'
