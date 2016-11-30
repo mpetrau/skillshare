@@ -11,6 +11,7 @@ gem 'redis'
 gem 'faker'
 gem 'cloudinary', '1.1.0'
 gem 'carrierwave'
+gem 'bootstrap-datepicker-rails'
 
 gem 'sass-rails'
 gem 'jquery-rails'

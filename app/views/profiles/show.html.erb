@@ -14,7 +14,7 @@
            <p>Booked offers:</p>
            <% offer.bookings.each do |booking| %>
            <li>
-             <p> Week:<%= booking.week %>, with <%=  booking.user.name %></p>
+             <p> Date:<%= booking.date %>, with <%=  booking.user.name %></p>
            </li>
            <% end %>
          </ul>
