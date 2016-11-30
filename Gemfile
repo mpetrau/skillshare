@@ -1,4 +1,7 @@
- source 'https://rubygems.org'
+source 'https://rubygems.org'
+source 'https://rails-assets.org' do
+  gem "rails-assets-underscore"
+end
 ruby '2.3.1'
 
 gem 'rails', '5.0.0.1'
@@ -7,11 +10,13 @@ gem 'pg'
 gem 'figaro'
 gem 'jbuilder', '~> 2.0'
 gem 'devise'
+gem 'omniauth-facebook'
 gem 'redis'
 gem 'faker'
 gem 'cloudinary', '1.1.0'
 gem 'carrierwave'
 gem 'bootstrap-datepicker-rails'
+gem 'country-select'
 
 gem 'sass-rails'
 gem 'jquery-rails'
@@ -20,6 +25,9 @@ gem 'bootstrap-sass'
 gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'autoprefixer-rails'
+gem "geocoder"
+gem "coffee-rails"
+gem "gmaps4rails"
 
 group :development, :test do
   gem 'binding_of_caller'

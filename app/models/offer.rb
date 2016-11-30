@@ -2,15 +2,17 @@ class Offer < ApplicationRecord
 
   SKILLS_CATS = %w(Cooking Photography Paragliding Programming Jogging)
   SENIORITY = %w(new junior experienced advanced expert)
-  LOCATIONS = %w(Barcelona Madrid Valencia Malaga)
 
   belongs_to :user
   has_many :bookings
   # before_destroy :check_for_bookings
-  validates :user, :price, :title, :description, :seniority, :category, :location, presence: true
+  validates :user, :price, :title, :description, :seniority, :category, :address, :zip_code, :city, :country, presence: true
   validates :price, numericality: { only_integer: true }
   validates_inclusion_of :seniority, in: SENIORITY
   validates_inclusion_of :category, in: SKILLS_CATS
+
+  geocoded_by :location
+  after_validation :geocode, if: :location_changed?
 
   def charge_commission
     (self.price * commission_fee).round(1)
@@ -18,6 +20,14 @@ class Offer < ApplicationRecord
 
   def charge_price
     total_price
+  end
+
+  def location
+     "#{address}, #{zip_code} #{city} #{country}"
+  end
+
+  def location_changed?
+    address_changed? || zip_code_changed? || city_changed? || country_changed?
   end
 
   private

@@ -7,5 +7,7 @@ tmp/*
 public/assets
 tmp
 log
+tmp/
 # Ignore application configuration
 /config/application.yml
+

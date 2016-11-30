@@ -1,14 +1,16 @@
 <div class="col-md-5 col-md-offset-1">
   <%= simple_form_for @offer do |f| %>
     <%= f.input :category, as: :radio_buttons, item_label_class: "radio-inline", item_wrapper_tag: false, collection: Offer::SKILLS_CATS %>
-    <%= f.input :description, placeholder: 'Description', label: false, as: :text, input_html: { :rows => 5 , :style => 'width: 100%'} %>
+    <%= f.input :title, placeholder: 'Title', label: false %>
+    <%= f.input :description, placeholder: 'Description', label: false, as: :text, input_html: { :rows => 6 , :style => 'width: 100%'} %>
   </div>
   <div class="col-md-5">
-    <%= f.input :title, placeholder: 'Title', label: false %>
     <%= f.input :seniority, prompt: 'Select level', label: false, as: :select, collection: Offer::SENIORITY %>
     <%= f.input :price, placeholder: 'Price', label: false %>
-    <%= f.input :location, prompt: 'Select city', label: false, as: :select, collection: Offer::LOCATIONS %>
-  </div>
+    <%= f.input :address, placeholder: 'Street address', label: false %>
+    <%= f.input :zip_code, placeholder: 'Zip code', label: false %>
+    <%= f.input :city, placeholder: 'City', label: false %>
+    <%= f.input :country, as: :string, placeholder: 'Country', label: false %>
   <div class="col-md-10 col-md-offset-1 text-center">
     <%= f.button :submit %>
   <% end %>
