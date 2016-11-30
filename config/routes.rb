@@ -2,10 +2,11 @@ Rails.application.routes.draw do
   get 'bookings/create'
 
   root to: 'pages#home'
-  devise_for :users
+  devise_for :users,
+  controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   resource :profile, only: [:show]
   resources :offers, only: [:index, :show, :new, :create] do
     resources :bookings, only: [:create]
-    end
+  end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
