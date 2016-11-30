@@ -7,6 +7,6 @@
 $(document).ready(function(){
   $('.datepicker').datepicker({
     todayHighlight: true,
-    dateFormat: 'dd-mm-yy'
+    format: "yyyy-mm-dd"
   });
 });
