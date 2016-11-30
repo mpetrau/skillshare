@@ -9,4 +9,9 @@ doc/app
 *.swp
 *~
 .DS_Store
-application.yml
+public/assets
+tmp
+log
+tmp/
+# Ignore application configuration
+/config/application.yml
