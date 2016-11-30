@@ -30,4 +30,8 @@ User.destroy_all
 150.times { Booking.create(
   user_id: User.offset(rand(User.count)).first.id,
   offer_id: Offer.offset(rand(Offer.count)).first.id,
-  week: rand(0..52) )}
+  date: Faker::Date.between(1.year.ago, 1.year.from_now)
+  )}
+
+# Booking.all.each { |booking| booking.update(date: Faker::Date.between(1.year.ago, 1.year.from_now)) }
+
