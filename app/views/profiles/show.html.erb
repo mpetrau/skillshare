@@ -1,8 +1,8 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-10 col-md-offset-1">
+    <div class="col-md-3 col-md-offset-4">
       <%= image_tag @profile.photo.url(:standard_face), class: "img-responsive bordered" %>
-      <%= @profile.name %>
+      <h1><%= @profile.name.capitalize %></h1>
 
       <h1>See your Offers</h1>
       <ul>
@@ -14,7 +14,7 @@
            <p>Booked offers:</p>
            <% offer.bookings.each do |booking| %>
            <li>
-             <p> Date:<%= booking.date %>, with <%=  booking.user.name %></p>
+             <p> Date:<%= booking.date %>, with <%= booking.user.name %></p>
            </li>
            <% end %>
          </ul>
