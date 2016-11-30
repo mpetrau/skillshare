@@ -38739,3 +38739,115 @@ Processing by OffersController#show as HTML
 Completed 200 OK in 44ms (Views: 39.3ms | ActiveRecord: 0.8ms)
 
 
+Started GET "/offers/32" for ::1 at 2016-11-30 01:46:52 +0100
+Processing by OffersController#show as HTML
+  Parameters: {"id"=>"32"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mOffer Load (0.2ms)[0m  [1m[34mSELECT  "offers".* FROM "offers" WHERE "offers"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  Rendering offers/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 26], ["LIMIT", 1]]
+  Rendered offers/_booking_form.html.erb (3.9ms)
+  Rendered offers/show.html.erb within layouts/application (7.8ms)
+  Rendered shared/_navbar.html.erb (3.9ms)
+  Rendered shared/_flashes.html.erb (0.6ms)
+Completed 200 OK in 219ms (Views: 214.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/offers/32" for ::1 at 2016-11-30 01:47:11 +0100
+Processing by OffersController#show as HTML
+  Parameters: {"id"=>"32"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mOffer Load (0.1ms)[0m  [1m[34mSELECT  "offers".* FROM "offers" WHERE "offers"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  Rendering offers/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 26], ["LIMIT", 1]]
+  Rendered offers/_booking_form.html.erb (4.6ms)
+  Rendered offers/show.html.erb within layouts/application (10.6ms)
+  Rendered shared/_navbar.html.erb (2.9ms)
+  Rendered shared/_flashes.html.erb (0.8ms)
+Completed 200 OK in 51ms (Views: 47.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/offers/32" for ::1 at 2016-11-30 01:47:39 +0100
+Processing by OffersController#show as HTML
+  Parameters: {"id"=>"32"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mOffer Load (0.2ms)[0m  [1m[34mSELECT  "offers".* FROM "offers" WHERE "offers"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  Rendering offers/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 26], ["LIMIT", 1]]
+  Rendered offers/_booking_form.html.erb (4.7ms)
+  Rendered offers/show.html.erb within layouts/application (8.9ms)
+  Rendered shared/_navbar.html.erb (2.4ms)
+  Rendered shared/_flashes.html.erb (0.9ms)
+Completed 200 OK in 43ms (Views: 38.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/offers/32" for ::1 at 2016-11-30 01:50:21 +0100
+Processing by OffersController#show as HTML
+  Parameters: {"id"=>"32"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mOffer Load (0.1ms)[0m  [1m[34mSELECT  "offers".* FROM "offers" WHERE "offers"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  Rendering offers/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 26], ["LIMIT", 1]]
+  Rendered offers/_booking_form.html.erb (3.9ms)
+  Rendered offers/show.html.erb within layouts/application (7.4ms)
+  Rendered shared/_navbar.html.erb (2.6ms)
+  Rendered shared/_flashes.html.erb (0.5ms)
+Completed 200 OK in 41ms (Views: 37.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/offers/32" for ::1 at 2016-11-30 01:52:15 +0100
+Processing by OffersController#show as HTML
+  Parameters: {"id"=>"32"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mOffer Load (0.2ms)[0m  [1m[34mSELECT  "offers".* FROM "offers" WHERE "offers"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  Rendering offers/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 26], ["LIMIT", 1]]
+  Rendered offers/_booking_form.html.erb (3.8ms)
+  Rendered offers/show.html.erb within layouts/application (7.5ms)
+  Rendered shared/_navbar.html.erb (3.8ms)
+  Rendered shared/_flashes.html.erb (0.4ms)
+Completed 200 OK in 5536ms (Views: 5531.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/offers/32" for ::1 at 2016-11-30 01:52:37 +0100
+Processing by OffersController#show as HTML
+  Parameters: {"id"=>"32"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mOffer Load (0.1ms)[0m  [1m[34mSELECT  "offers".* FROM "offers" WHERE "offers"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  Rendering offers/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 26], ["LIMIT", 1]]
+  Rendered offers/_booking_form.html.erb (3.5ms)
+  Rendered offers/show.html.erb within layouts/application (7.5ms)
+  Rendered shared/_navbar.html.erb (2.6ms)
+  Rendered shared/_flashes.html.erb (0.3ms)
+Completed 200 OK in 4195ms (Views: 4190.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/offers/32" for ::1 at 2016-11-30 01:53:52 +0100
+Processing by OffersController#show as HTML
+  Parameters: {"id"=>"32"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mOffer Load (0.2ms)[0m  [1m[34mSELECT  "offers".* FROM "offers" WHERE "offers"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  Rendering offers/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 26], ["LIMIT", 1]]
+  Rendered offers/_booking_form.html.erb (4.3ms)
+  Rendered offers/show.html.erb within layouts/application (7.7ms)
+  Rendered shared/_navbar.html.erb (2.8ms)
+  Rendered shared/_flashes.html.erb (0.4ms)
+Completed 200 OK in 48ms (Views: 43.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/offers/32" for ::1 at 2016-11-30 01:55:52 +0100
+Processing by OffersController#show as HTML
+  Parameters: {"id"=>"32"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mOffer Load (0.1ms)[0m  [1m[34mSELECT  "offers".* FROM "offers" WHERE "offers"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  Rendering offers/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 26], ["LIMIT", 1]]
+  Rendered offers/_booking_form.html.erb (3.6ms)
+  Rendered offers/show.html.erb within layouts/application (7.3ms)
+  Rendered shared/_navbar.html.erb (2.6ms)
+  Rendered shared/_flashes.html.erb (0.3ms)
+Completed 200 OK in 3897ms (Views: 3892.7ms | ActiveRecord: 0.7ms)
+
+
