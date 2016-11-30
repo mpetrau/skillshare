@@ -2,7 +2,6 @@ class Offer < ApplicationRecord
 
   SKILLS_CATS = %w(Cooking Photography Paragliding Programming Jogging)
   SENIORITY = %w(new junior experienced advanced expert)
-  LOCATIONS = %w(Barcelona Madrid Valencia Malaga)
 
   belongs_to :user
   has_many :bookings

@@ -12,6 +12,12 @@ $(document).ready(function() {
   }
 });
 
+var input = document.getElementById('_offers_location');
+var searchBox = new google.maps.places.SearchBox(input);
+map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+
+var search_address = $('#offer_address').get(0);
+
 function onPlaceChanged() {
   var place = this.getPlace();
   var components = getAddressComponents(place);
