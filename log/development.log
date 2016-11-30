@@ -44146,3 +44146,14 @@ Processing by PagesController#home as HTML
 Completed 200 OK in 120ms (Views: 116.4ms | ActiveRecord: 0.5ms)
 
 
+Started GET "/offers/new" for 10.240.0.195 at 2016-11-30 15:38:03 +0000
+Processing by OffersController#new as HTML
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering offers/new.html.erb within layouts/application
+  Rendered offers/_offer_form.html.erb (38.6ms)
+  Rendered offers/new.html.erb within layouts/application (96.2ms)
+  Rendered shared/_navbar.html.erb (3.7ms)
+  Rendered shared/_flashes.html.erb (0.6ms)
+Completed 200 OK in 145ms (Views: 139.3ms | ActiveRecord: 2.0ms)
+
+

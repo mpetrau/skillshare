@@ -5,5 +5,7 @@ tmp/*
 *.swp
 .DS_Store
 public/assets
+tmp
+log
 # Ignore application configuration
 /config/application.yml
