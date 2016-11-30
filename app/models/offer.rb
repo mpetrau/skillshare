@@ -7,7 +7,7 @@ class Offer < ApplicationRecord
   belongs_to :user
   has_many :bookings
   # before_destroy :check_for_bookings
-  validates :user, :price, :title, :description, :seniority, :category, :location, presence: true
+  validates :user, :price, :title, :description, :seniority, :category, :address, :zip_code, :city, :country, presence: true
   validates :price, numericality: { only_integer: true }
   validates_inclusion_of :seniority, in: SENIORITY
   validates_inclusion_of :category, in: SKILLS_CATS
@@ -21,6 +21,14 @@ class Offer < ApplicationRecord
 
   def charge_price
     total_price
+  end
+
+  def location
+     "#{address}, #{zip_code} #{city} #{country}"
+  end
+
+  def location_changed?
+    address_changed? || zip_code_changed? || city_changed? || country_changed?
   end
 
   private

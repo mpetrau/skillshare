@@ -75,6 +75,7 @@ GEM
       execjs
     coffee-script-source (1.11.1)
     concurrent-ruby (1.0.2)
+    country-select (1.1.1)
     debug_inspector (0.0.2)
     devise (4.2.0)
       bcrypt (~> 3.0)
@@ -228,6 +229,7 @@ DEPENDENCIES
   carrierwave
   cloudinary (= 1.1.0)
   coffee-rails
+  country-select
   devise
   faker
   figaro
