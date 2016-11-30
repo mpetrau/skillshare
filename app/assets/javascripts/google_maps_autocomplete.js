@@ -1,4 +1,9 @@
-$(document).ready(function() {
+$(document).ready(function(){
+  $('.datepicker').datepicker({
+    todayHighlight: true,
+    format: "yyyy-mm-dd"
+  });
+
   var offer_address = $('#offer_address').get(0);
 
   if (offer_address) {
@@ -12,9 +17,9 @@ $(document).ready(function() {
   }
 });
 
-var input = document.getElementById('_offers_location');
-var searchBox = new google.maps.places.SearchBox(input);
-map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+  var input = document.getElementById('_offers_location');
+  var searchBox = new google.maps.places.SearchBox(input);
+  map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 
 var search_address = $('#offer_address').get(0);
 
