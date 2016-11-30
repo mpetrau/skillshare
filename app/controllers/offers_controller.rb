@@ -4,12 +4,18 @@ class OffersController < ApplicationController
   def index
     @category = params["/offers"]["category"]
     @location = params["/offers"]["location"]
-    @offers = Offer.where(["category = ? and location = ?", @category, @location])
+    # @offers = Offer.where(["category = ? and location = ?", @category, @location])
+    @offers = Offer.near(@location, 10).where(["category = ?", @category])
   end
 
   def show
     @offer = Offer.find(params[:id])
     @booking = Booking.new
+    @location_hash = Gmaps4rails.build_markers(@offer) do |offer, marker|
+      marker.lat offer.latitude
+      marker.lng offer.longitude
+      # marker.infowindow render_to_string(partial: "/flats/map_box", locals: { flat: flat })
+    end
   end
 
   def new
@@ -31,6 +37,6 @@ class OffersController < ApplicationController
   private
 
   def offer_params
-    params.require(:offer).permit([:price, :title, :description, :seniority, :category, :location])
+    params.require(:offer).permit([:price, :title, :description, :seniority, :category, :address, :zip_code, :city, :country])
   end
 end
