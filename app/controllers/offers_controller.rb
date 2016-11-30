@@ -1,4 +1,6 @@
 class OffersController < ApplicationController
+  skip_before_action :authenticate_user!, only: [ :index ]
+
   def index
     @category = params["/offers"]["category"]
     @location = params["/offers"]["location"]

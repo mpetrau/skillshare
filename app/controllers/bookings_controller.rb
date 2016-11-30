@@ -7,10 +7,10 @@ class BookingsController < ApplicationController
     if @booking.save
       # at later time this will instead redirect to the list of all bookings
       # at later time also need to add mailer to confirm a booking
-      flash[:notice] = "Post successfully created"
+      flash[:notice] = "Booking successfully created"
       redirect_to @offer
     else
-      flash[:notice] = "Post failed"
+      flash[:alert] = "Booking failed. Try again"
       render 'offers/show'
     end
   end
@@ -22,6 +22,6 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:week)
+    params.require(:booking).permit(:date)
   end
 end
