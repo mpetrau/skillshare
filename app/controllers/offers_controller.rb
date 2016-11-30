@@ -10,6 +10,11 @@ class OffersController < ApplicationController
   def show
     @offer = Offer.find(params[:id])
     @booking = Booking.new
+    @location_hash = Gmaps4rails.build_markers(@offer) do |offer, marker|
+      marker.lat offer.latitude
+      marker.lng offer.longitude
+      # marker.infowindow render_to_string(partial: "/flats/map_box", locals: { flat: flat })
+    end
   end
 
   def new

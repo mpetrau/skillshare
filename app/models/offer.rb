@@ -12,6 +12,9 @@ class Offer < ApplicationRecord
   validates_inclusion_of :seniority, in: SENIORITY
   validates_inclusion_of :category, in: SKILLS_CATS
 
+  geocoded_by :location
+  after_validation :geocode, if: :location_changed?
+
   def charge_commission
     (self.price * commission_fee).round(1)
   end
