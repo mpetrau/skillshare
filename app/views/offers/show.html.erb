@@ -18,10 +18,17 @@
             <hr>
             <dt>Description</dt>
             <dd><%= @offer.description %></dd>
+            <dt>Avg Rating</dt>
+            <dd><% @offer.average.times do %>
+             <i class="fa fa-star" aria-hidden="true" style="color: yellow;" ></i>
+              <% end %>
+
             <hr>
             <% if current_user == @offer.user %>
-              <%= link_to "Edit offer", edit_offer_path(@offer), class: "btn btn-primary" %>
-              <%= link_to "Delete offer", offer_path(@offer), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-primary" %>
+            <%= link_to "Edit offer", edit_offer_path(@offer), class: "btn btn-primary" %>
+            <%= link_to "Delete offer", offer_path(@offer), method: :delete, data: { confirm: "Are you sure?" } %>
+            <% else %>
+            <%= link_to "Write a Review", new_offer_review_path(@offer), class: "btn btn-primary" %>
             <% end %>
           </dl>
         </div>
@@ -79,7 +86,7 @@
     </div>
   </div>
 
-<% content_for(:after_js) do %>
+  <% content_for(:after_js) do %>
   <%= javascript_tag do %>
   $(document).ready(function() {
   var handler = Gmaps.build('Google');
