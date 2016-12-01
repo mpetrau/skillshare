@@ -2,23 +2,23 @@
 <% @todays_bookings = @all_bookings.select { |booking| booking.date == Date.today} %>
 <% @past_bookings = @all_bookings.select { |booking| booking.date < Date.today} %>
 
-<% content_for(:bookingcard) %>
-
-<% bookingcard = lambda do |bookings| %>
-            <% bookings.each do |booking| %>
-            <li>
-              <% if booking.user == current_user %>
-                <p><%= booking.id %></p>
-                <p> Learning </p>
-               <p> <%= booking.offer.title %></p>
-               <p> Date:<%= booking.date %>, with <%=  booking.offer.user.name %></p>
-              <% else  %>
-            <p> Teaching </p>
-               <p> <%= booking.offer.title %></p>
-               <p> Date:<%= booking.date %>, with <%=  booking.user.name %></p>
-              <% end %>
-            </li>
-             <% end %>
+<% def contentcard (bookings, classes) %>
+<% lambda do |bookings| %>
+  <% bookings.each do |booking| %>
+  <div class="product">
+    <% if booking.user == current_user %>
+    <p><%= booking.id %></p>
+    <p> Learning </p>
+    <p> <%= booking.offer.title %></p>
+    <p> Date:<%= booking.date %>, with <%=  booking.offer.user.name %></p>
+    <% else  %>
+    <p> Teaching </p>
+    <p> <%= booking.offer.title %></p>
+    <p> Date:<%= booking.date %>, with <%=  booking.user.name %></p>
+    <% end %>
+  </div>
+  <% end %>
+<% end %>
 <% end %>
 
 <div class="container">
@@ -55,15 +55,15 @@
       <div class="col-md-10 col-md-offset-1 text-center">
       <% unless @todays_bookings.nil? %>
         <h3>Today's classes</h3>
-        <%= bookingcard.call @todays_bookings %>
+        <% bookingcard (@todays_bookings, "booking-today") %>
       <% end %>
       <% unless @upcoming_bookings.nil? %>
         <h3>Upcoming classes</h3>
-        <%= bookingcard.call @upcoming_bookings %>
+        <% bookingcard (@todays_bookings, "booking-today") %>
       <% end %>
       <% unless @past_bookings.nil? %>
         <h3>Past classes</h3>
-        <%= bookingcard.call @past_bookings %>
+        <% bookingcard (@todays_bookings, "booking-today") %>
       <% end %>
     </div>
   </div>
