@@ -50,12 +50,12 @@
   align-items: center;
   text-align: center;
   margin: 0px;
-}
-.product-controls a {
-  padding: 0 5px;
-  font-size: 17px;
-  color: #E6E6E6;
-  z-index: 3;
+  z-index: 2;
+  a {
+    padding: 0 5px;
+    font-size: 17px;
+    color: #E6E6E6;
+  }
 }
 
 .product-controls a:hover {

@@ -51,8 +51,8 @@
           <p><%= truncate offer.description %>...</p>
         </div>
         <ul class="list-inline product-controls product-controls-hidden hidden-sm hidden-xs">
-          <li><i class="fa fa-pencil-square-o" aria-hidden="true"></i><%= link_to "", "#" %></li>
-          <li><i class="fa fa-trash-o" aria-hidden="true"></i><%= link_to "", "#" %></li>
+          <li><i class="fa fa-pencil-square-o" aria-hidden="true"></i><%= link_to "", edit_offer_path(offer) %></li>
+          <li><i class="fa fa-trash-o" aria-hidden="true"></i><%= link_to "", offer_path(offer), method: :delete %></li>
         </ul>
         <%= link_to '', offer_path(offer), class: "card-link" %>
       </div>

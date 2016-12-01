@@ -2,3 +2,21 @@
  * CSS code specific to home page
  * (margin/padding adjustments)
  * ------------------------------------- */
+
+.info{
+  height: 250px;
+  width: 250px;
+  border-radius: 50%;
+  padding: 20px;
+  display: table-cell;
+  background-color: $blue;
+  text-align: center;
+  vertical-align: middle;
+  color: $yellow;
+  font-size: 75%;
+  font-weight: lighter;
+}
+
+div {
+  border: 1px solid red;
+}
