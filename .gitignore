@@ -1,8 +1,13 @@
 .bundle
+db/*.sqlite3
 log/*.log
+*.log
 tmp/**/*
 tmp/*
+doc/api
+doc/app
 *.swp
+*~
 .DS_Store
 public/assets
 tmp
@@ -10,4 +15,3 @@ log
 tmp/
 # Ignore application configuration
 /config/application.yml
-
