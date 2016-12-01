@@ -6,9 +6,3 @@
 //= require gmaps/google
 //= require_tree .
 
-$(document).ready(function(){
-  $('.datepicker').datepicker({
-    todayHighlight: true,
-    format: "yyyy-mm-dd"
-  });
-});
