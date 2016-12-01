@@ -4,19 +4,27 @@
 
 <% bookingcard = lambda do |bookings, classes| %>
   <% bookings.each do |booking| %>
-  <div class="booking <%= classes %>">
+  <div class="booking-card <%= classes %>">
     <div class="booking-content">
     <% if booking.user == current_user %>
-    <p> <b>Learning</b> with <%=  booking.offer.user.name %></p>
-    <%= image_tag booking.offer.user.photo.url(:bright_face), class: "img-responsive avatar-large" %>
-    <p> <%= booking.offer.title %></p>
-    <p> Date:<%= booking.date %>, with </p>
+    <div class="booking-user">
+      <%= image_tag booking.offer.user.photo.url(:bright_face), class: "img-responsive avatar-large" %>
+    </div>
+    <div class="booking-title">
+      <b>Learning</b> with <%=  booking.offer.user.name %></p>
+    </div>
     <% else  %>
-    <%= image_tag booking.user.photo.url(:bright_face), class: "img-responsive avatar-large" %>
-    <p> <b>Teaching</b> </p>
-    <p> <%= booking.offer.title %></p>
-    <p> Date:<%= booking.date %>, with <%=  booking.user.name %></p>
+    <div class="booking-user">
+      <%= image_tag booking.user.photo.url(:bright_face), class: "img-responsive avatar-large" %>
+    </div>
+    <div class="booking-title">
+      <b>Teaching</b> <%=  booking.user.name %></p>
+    </div>
     <% end %>
+    <div class="booking-content">
+      <h3> #<%= booking.offer.category %>: <%= booking.offer.title %></h3>
+      <p> <%= booking.date %> </p>
+    </div>
   </div>
   </div>
   <% end %>
