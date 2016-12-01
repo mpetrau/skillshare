@@ -40,25 +40,48 @@
     </div>
     <div>
       <% if current_user != @offer.user %>
-      <div class="col-md-3 col-md-offset-1 margin-top-md">
-        <div class="booking-span booking-span-red">
-          <h3 >Make a booking!</h3>
+        <div class="col-md-3 col-md-offset-1 margin-top-md">
+          <%= simple_form_for [@offer, @booking] do |f| %>
+        
+          <div class="first-step-book">
+            <div class="booking-span booking-span-red">
+              <h3 >Make a booking!</h3>
+            </div>
+            <div class = "booking-span booking-span-white">
+              <dl class="dl-horizontal text-left margin-top-sm">
+                <dt>Price</dt>
+                <dd><%= @offer.price %></dd>
+                <dt>Commission</dt>
+                <dd><%= @offer.charge_commission %></dd>
+                <hr>
+                <dt>Total</dt>
+                <dd><%= @offer.charge_price %></dd>
+              </dl>
+            </div>
+            <div class = "booking-span booking-span-white">
+              <%= f.input :date, as: :string, placeholder: "2016-12-30", label: false, input_html: { class: 'datepicker' }  %>
+              <%= link_to 'Book','#', class: 'btn btn-primary' ,id: "step-one" %>
+            </div>
+          </div>
+
+          <div id="payment-form" class="second-step-book">
+            <div class="booking-span booking-span-red">
+              <h3>Your payment details</h3>
+            </div>
+            <div class="booking-span booking-span-white">
+              <form class="form-inline">
+                <div class="form-group">
+                  <input type="text" class="form-control " placeholder="cardholder name">
+                  <input type="text" class="form-control" placeholder="card number">
+                  <input type="text" class="form-control" placeholder="expiry date">
+                  <input type="text" class="form-control" placeholder="security code">
+                </div>
+              </form>
+              <%= f.button :submit, "Book"%>
+            </div>
+          </div>
+          <% end  %>        
         </div>
-        <div class = "booking-span booking-span-white">
-          <dl class="dl-horizontal text-left margin-top-sm">
-            <dt>Price</dt>
-            <dd><%= @offer.price %></dd>
-            <dt>Commission</dt>
-            <dd><%= @offer.charge_commission %></dd>
-            <hr>
-            <dt>Total</dt>
-            <dd><%= @offer.charge_price %></dd>
-          </dl>
-        </div>
-        <div class = "booking-span booking-span-white">
-          <%= render 'offers/booking_form' %>
-        </div>
-      </div>
       <% end %>
     </div>
   </div>
