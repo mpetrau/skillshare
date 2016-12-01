@@ -1,0 +1,9 @@
+<h3>Hi <%= @user.name %>,</h3>
+<% booking= @user.bookings.last %>
+<p>You just booked <%= booking.offer.title%>
+  taught by <%= booking.offer.user.name.capitalize %> on this date: <%= booking.date %>
+</p>
+<p>Be sure to review the class when you get the chance!</p>
+
+<hr>
+<p>To view all your bookings go <%= link_to "here", profile_url %></p>

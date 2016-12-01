@@ -1,0 +1,5 @@
+<h1><%= @user.name.capitalize %> someone booked your class!</h1>
+<p><% booking = @user.booked_offers.last %>
+  <%= booking.user.name.capitalize %> just booked your class <%= booking.offer.title %> for <%= booking.date %>
+</p>
+<p>To view all your bookings go <%= link_to "here", profile_url %></p>
