@@ -1,52 +1,74 @@
+<% @upcoming_bookings = @all_bookings.select { |booking| booking.date > Date.today} %>
+<% @todays_bookings = @all_bookings.select { |booking| booking.date == Date.today} %>
+<% @past_bookings = @all_bookings.select { |booking| booking.date < Date.today} %>
+
+<% content_for(:bookingcard) %>
+
+<% bookingcard = lambda do |bookings| %>
+        <ul>
+            <% bookings.each do |booking| %>
+            <li>
+              <% if booking.user == current_user %>
+                <p><%= booking.id %></p>
+                <p> Learning </p>
+               <p> <%= booking.offer.title %></p>
+               <p> Date:<%= booking.date %>, with <%=  booking.offer.user.name %></p>
+              <% else  %>
+            <p> Teaching </p>
+               <p> <%= booking.offer.title %></p>
+               <p> Date:<%= booking.date %>, with <%=  booking.user.name %></p>
+              <% end %>
+            </li>
+             <% end %>
+           </ul>
+<% end %>
+
 <div class="container">
   <div class="row">
-    <div class="col-md-4 col-md-offset-1">
-      <%= image_tag @profile.photo.url(:standard_face), class: "img-responsive bordered" %>
-      <%= @profile.name.capitalize %>
+    <div class="col-md-5 background-white-full">
+      <div class="profile-card margin-top-md">
+        <%= image_tag @profile.photo.url(:standard_face), class: "img-responsive profile-card-img bordered" %>
+        <div class="profile-card-name"><%= @profile.name.capitalize %></div>
+      </div>
+      <h1 class="margin-top-md">Your Published Offers</h1>
+      <% if @profile.offers.empty? %>
+      <div class="page-header-colorless">
+        <h4><i class="fa fa-frown-o" aria-hidden="true"></i> You did not publish any offers yet!</h4>
+        <%= link_to "Create your offer!", new_offer_path, class: "btn navbar-wagon-btn" %>
+      </div>
+      <% else %>
+      <% @profile.offers.each do |offer| %>
+      <div class="product margin-top-sm product-border">
+        <div class='product-body'>
+          <h3><%= offer.title.upcase %></h3>
+          <p><%= truncate offer.description %>...</p>
+        </div>
+        <ul class="list-inline product-controls product-controls-hidden hidden-sm hidden-xs">
+          <li><i class="fa fa-pencil-square-o" aria-hidden="true"></i><%= link_to "", "#" %></li>
+          <li><i class="fa fa-trash-o" aria-hidden="true"></i><%= link_to "", "#" %></li>
+        </ul>
+        <%= link_to '', offer_path(offer), class: "card-link" %>
+      </div>
+      <% end %>
+      <% end %>
     </div>
-    <div class="col-md-6 col-md-offset-1">
-      <h1>Your Published Offers</h1>
-      <ul>
-        <% @profile.offers.each do |offer| %>
-        <li>
-         <%= offer.title %>
-         <%= link_to "see offer", offer_path(offer) %>
-       </li>
-       <% end %>
-     </ul>
-   </div>
-   </div>
- <div class="row">
-  <div class="col-md-10 col-md-offset-1 text-center">
-    <h1>Your classes:</h1>
+    <div class="col-md-5 col-md-offset-1 background-white-full">
+     <div class="row margin-top-md">
+      <div class="col-md-10 col-md-offset-1 text-center">
+      <% unless @todays_bookings.nil? %>
+        <h3>Today's classes</h3>
+        <%= bookingcard.call @todays_bookings %>
+      <% end %>
+      <% unless @upcoming_bookings.nil? %>
+        <h3>Upcoming classes</h3>
+        <%= bookingcard.call @upcoming_bookings %>
+      <% end %>
+      <% unless @past_bookings.nil? %>
+        <h3>Past classes</h3>
+        <%= bookingcard.call @past_bookings %>
+      <% end %>
+    </div>
   </div>
-  <div class="col-md-4 col-md-offset-2">
-    <h3>You host:</h3>
-    <ul>
-      <li>
-        <% @profile.offers.each do |offer| %>
-        <p><%= offer.title %></p>
-        <ul>
-         <% offer.bookings.each do |booking| %>
-         <li>
-           <p> Date:<%= booking.date %>, with <%=  booking.user.name %></p>
-         </li>
-         <% end %>
-       </ul>
-       <% end %>
-     </li>
-   </ul>
- </div>
- <div class="col-md-4 col-md-offset-1">
-  <h3>You attend:</h3>
-  <ul>
-    <% @profile.bookings.each do |booking| %>
-    <li>
-      <p>Title: <%= booking.offer.title %></p>
-      <p>Organizer: <%= booking.offer.user.name %></p>
-    </li>
-    <% end %>
-  </ul>
-  </div>
+</div>
 </div>
 </div>
