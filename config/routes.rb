@@ -5,8 +5,9 @@ Rails.application.routes.draw do
   devise_for :users,
   controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   resource :profile, only: [:show]
-  resources :offers, only: [:index, :show, :new, :create] do
+  resources :offers, only: [:index, :show, :new, :edit, :create] do
     resources :bookings, only: [:create]
+    resources :reviews, only: [:new, :create]
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
