@@ -2,23 +2,24 @@
 <% @todays_bookings = @all_bookings.select { |booking| booking.date == Date.today} %>
 <% @past_bookings = @all_bookings.select { |booking| booking.date < Date.today} %>
 
-<% def contentcard (bookings, classes) %>
-<% lambda do |bookings| %>
+<% bookingcard = lambda do |bookings, classes| %>
   <% bookings.each do |booking| %>
-  <div class="product">
+  <div class="booking <%= classes %>">
+    <div class="booking-content">
     <% if booking.user == current_user %>
-    <p><%= booking.id %></p>
-    <p> Learning </p>
+    <p> <b>Learning</b> with <%=  booking.offer.user.name %></p>
+    <%= image_tag booking.offer.user.photo.url(:bright_face), class: "img-responsive avatar-large" %>
     <p> <%= booking.offer.title %></p>
-    <p> Date:<%= booking.date %>, with <%=  booking.offer.user.name %></p>
+    <p> Date:<%= booking.date %>, with </p>
     <% else  %>
-    <p> Teaching </p>
+    <%= image_tag booking.user.photo.url(:bright_face), class: "img-responsive avatar-large" %>
+    <p> <b>Teaching</b> </p>
     <p> <%= booking.offer.title %></p>
     <p> Date:<%= booking.date %>, with <%=  booking.user.name %></p>
     <% end %>
   </div>
+  </div>
   <% end %>
-<% end %>
 <% end %>
 
 <div class="container">
@@ -55,15 +56,15 @@
       <div class="col-md-10 col-md-offset-1 text-center">
       <% unless @todays_bookings.nil? %>
         <h3>Today's classes</h3>
-        <% bookingcard (@todays_bookings, "booking-today") %>
+        <% bookingcard.call @todays_bookings, "booking-today" %>
       <% end %>
       <% unless @upcoming_bookings.nil? %>
         <h3>Upcoming classes</h3>
-        <% bookingcard (@todays_bookings, "booking-today") %>
+        <% bookingcard.call @upcoming_bookings, "booking-upcoming" %>
       <% end %>
       <% unless @past_bookings.nil? %>
         <h3>Past classes</h3>
-        <% bookingcard (@todays_bookings, "booking-today") %>
+        <% bookingcard.call @past_bookings, "booking-past" %>
       <% end %>
     </div>
   </div>

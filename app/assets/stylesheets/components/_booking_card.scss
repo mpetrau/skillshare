@@ -1,0 +1,46 @@
+.booking {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  border-radius: 3px;
+  transition: all 0.15s ease;
+  background-color: white;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.booking-today {
+  background-color: $blue;
+  color: white;
+}
+
+.booking-upcoming {
+  background-color: $green;
+  color: white;
+}
+
+.booking-past {
+  background-color: $orange;
+  color: white;
+}
+
+.booking-body {
+  flex: 1 1 auto;
+  h3 {
+    font-weight: bold;
+    font-size: 23px;
+    margin-top: 0;
+  }
+  p {
+    font-weight: lighter;
+    color: #999999;
+    margin-bottom: 0;
+  }
+}
+
+/* Hover effects */
+.booking:hover {
+  cursor: pointer;
+  box-shadow: 1px 1px 5px $brand-color;
+  transform: scale(1.1)
+}
