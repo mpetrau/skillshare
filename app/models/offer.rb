@@ -5,7 +5,7 @@ class Offer < ApplicationRecord
 
   belongs_to :user
   has_many :bookings
-  has_many :reviews, dependent: :destroy
+  has_many :reviews, through: :bookings, dependent: :destroy
   # before_destroy :check_for_bookings
   validates :user, :price, :title, :description, :seniority, :category, :address, :zip_code, :city, :country, presence: true
   validates :price, numericality: { only_integer: true }
