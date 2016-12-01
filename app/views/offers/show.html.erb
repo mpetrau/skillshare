@@ -18,6 +18,11 @@
             <hr>
             <dt>Description</dt>
             <dd><%= @offer.description %></dd>
+            <hr>
+            <% if current_user == @offer.user %>
+              <%= link_to "Edit offer", edit_offer_path(@offer), class: "btn btn-primary" %>
+              <%= link_to "Delete offer", offer_path(@offer), method: :delete, data: { confirm: "Are you sure?" } %>
+            <% end %>
           </dl>
         </div>
       </div>
@@ -27,6 +32,7 @@
       </div>
     </div>
     <div>
+      <% if current_user != @offer.user %>
       <div class="col-md-3 col-md-offset-1 margin-top-md">
         <div class="booking-span booking-span-red">
           <h3 >Make a booking!</h3>
@@ -40,13 +46,13 @@
             <hr>
             <dt>Total</dt>
             <dd><%= @offer.charge_price %></dd>
-            <hr>
           </dl>
         </div>
         <div class = "booking-span booking-span-white">
           <%= render 'offers/booking_form' %>
         </div>
       </div>
+      <% end %>
     </div>
   </div>
 
