@@ -5,6 +5,7 @@ class Offer < ApplicationRecord
 
   belongs_to :user
   has_many :bookings
+  has_many :reviews, dependent: :destroy
   # before_destroy :check_for_bookings
   validates :user, :price, :title, :description, :seniority, :category, :address, :zip_code, :city, :country, presence: true
   validates :price, numericality: { only_integer: true }
@@ -30,6 +31,12 @@ class Offer < ApplicationRecord
     address_changed? || zip_code_changed? || city_changed? || country_changed?
   end
 
+  def average
+    stars = self.reviews.sum(:rating)
+    nb_reviews = self.reviews.count
+    nb_reviews = 1 if nb_reviews == 0
+    stars / nb_reviews
+  end
   private
 
   # def check_for_bookings
