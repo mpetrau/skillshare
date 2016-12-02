@@ -1,0 +1,62 @@
+.booking-card {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  border-radius: 3px;
+  transition: all 0.15s ease;
+  background-color: white;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.booking-today {
+  background-color: $blue;
+  color: white;
+}
+
+.booking-upcoming {
+  background-color: $green;
+  color: white;
+}
+
+.booking-past {
+  background-color: $orange;
+  color: white;
+}
+
+/* Hover effects */
+.booking:hover {
+  cursor: pointer;
+  box-shadow: 1px 1px 5px $brand-color;
+  transform: scale(1.1)
+}
+
+// Card details
+.booking-user {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+.booking-title {
+  text-align: left;
+}
+
+.booking-content p {
+  text-align: left;
+  }
+
+.booking-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  z-index:2;
+  background: black;
+  opacity: 0;
+}
+.booking-card:hover {
+  cursor: pointer;
+  box-shadow: 1px 1px 5px $brand-color;
+  transform: scale(1.1)
+}
