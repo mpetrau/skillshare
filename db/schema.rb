@@ -32,7 +32,6 @@ ActiveRecord::Schema.define(version: 20161201214732) do
     t.string   "description"
     t.string   "seniority"
     t.string   "category"
-    t.string   "location"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.float    "latitude"

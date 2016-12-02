@@ -6,7 +6,7 @@ class PhotoUploader < CarrierWave::Uploader::Base
   process convert: 'jpg'
 
   version :standard_face do
-    cloudinary_transformation width: 400, height: 600, gravity: :face, crop: :fill
+    cloudinary_transformation width: 200, height: 300, gravity: :face, crop: :fill
   end
 
   version :bright_face do
