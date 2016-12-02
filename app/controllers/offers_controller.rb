@@ -33,20 +33,20 @@ class OffersController < ApplicationController
       render :new
     end
   end
-  
+
   def edit
     @offer = Offer.find(params[:id])
     unless current_user == @offer.user
       redirect_to root_path, alert: "No access!"
     end
   end
-  
+
   def update
     @offer = Offer.find(params[:id])
     @offer.update(offer_params)
     redirect_to offer_path(@offer)
   end
-  
+
   def destroy
     @offer = Offer.find(params[:id])
     @offer.destroy

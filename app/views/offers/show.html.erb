@@ -42,7 +42,7 @@
       <% if current_user != @offer.user %>
         <div class="col-md-3 col-md-offset-1 margin-top-md">
           <%= simple_form_for [@offer, @booking] do |f| %>
-        
+
           <div class="first-step-book">
             <div class="booking-span booking-span-red">
               <h3 >Make a booking!</h3>
@@ -80,13 +80,13 @@
               <%= f.button :submit, "Book"%>
             </div>
           </div>
-          <% end  %>        
+          <% end  %>
         </div>
       <% end %>
     </div>
   </div>
 
-  <% content_for(:after_js) do %>
+<% content_for(:after_js) do %>
   <%= javascript_tag do %>
   $(document).ready(function() {
   var handler = Gmaps.build('Google');
