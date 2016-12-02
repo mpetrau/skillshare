@@ -11,14 +11,14 @@
       <%= image_tag booking.offer.user.photo.url(:bright_face), class: "img-responsive avatar-large" %>
     </div>
     <div class="booking-title">
-      <b>Learning</b> with <%=  booking.offer.user.name %></p>
+      <p><b>Learning</b> with <%=  booking.offer.user.name %></p>
     </div>
     <% else  %>
     <div class="booking-user">
-      <%= image_tag booking.user.photo.url(:bright_face), class: "img-responsive avatar-large" %>
+      <p><%= image_tag booking.user.photo.url(:bright_face), class: "img-responsive avatar-large" %>
     </div>
     <div class="booking-title">
-      <b>Teaching</b> <%=  booking.user.name %></p>
+      <p><b>Teaching</b> <%=  booking.user.name %></p>
     </div>
     <% end %>
     <div class="booking-content">
@@ -26,6 +26,7 @@
       <p> <%= booking.date %> </p>
     </div>
   </div>
+  <%= link_to '', offer_path(booking.offer), class: "card-link" %>
   </div>
   <% end %>
 <% end %>
@@ -54,7 +55,7 @@
           <li><i class="fa fa-pencil-square-o" aria-hidden="true"></i><%= link_to "", edit_offer_path(offer) %></li>
           <li><i class="fa fa-trash-o" aria-hidden="true"></i><%= link_to "", offer_path(offer), method: :delete %></li>
         </ul>
-        <%= link_to '', offer_path(offer), class: "card-link" %>
+        <%= link_to '', offer_path(offer), class: "booking-link" %>
       </div>
       <% end %>
       <% end %>
