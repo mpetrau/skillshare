@@ -17,6 +17,15 @@
   font-weight: lighter;
 }
 
-div {
-  border: 1px solid red;
+.max-height-set{
+  max-height: 300px;
+}
+
+.max-height-fill{
+  max-height: 100%;
+  overflow: hidden;
+}
+
+.margin-top-header{
+  margin-top: 135px;
 }

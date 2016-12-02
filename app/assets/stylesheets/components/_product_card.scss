@@ -25,12 +25,14 @@
 /* Body design */
 .product-body {
   flex: 1 1 auto;
+  margin-left: 10px;
 }
 .product-body h3 {
   font-weight: bold;
   font-size: 23px;
   margin-top: 0;
 }
+
 .product-body p {
   font-weight: lighter;
   color: #999999;

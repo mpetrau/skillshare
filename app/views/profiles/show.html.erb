@@ -31,7 +31,7 @@
 <% end %>
 
 <div class="container">
-  <div class="row">
+  <div class="row is-table-row">
     <div class="col-md-5 background-white-full">
       <div class="profile-card margin-top-md">
         <%= image_tag @profile.photo.url(:standard_face), class: "img-responsive profile-card-img bordered" %>
@@ -58,6 +58,9 @@
       </div>
       <% end %>
       <% end %>
+    </div>
+    <div class="col-md-1">
+
     </div>
     <div class="col-md-5 col-md-offset-1 background-white-full">
      <div class="row margin-top-md">
