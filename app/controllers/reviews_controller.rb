@@ -7,7 +7,9 @@ class ReviewsController < ApplicationController
 
   def create
     @review = @offer.reviews.build(review_params)
-    if @review.save
+
+    if @review.save!
+
      redirect_to @offer
      flash[:notice] = "Your review was created"
    else
