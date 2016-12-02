@@ -14,11 +14,11 @@ addresses = [
 ]
 
 photos = [
-  "https://media.licdn.com/mpr/mpr/jc/AAEAAQAAAAAAAAH2AAAAJGQyYWMwMTI0LTZkMzMtNDljNC04NDM5LWYyMjQ4NGEyMGE3MA.jpg",
+  "http://media.licdn.com/mpr/mpr/jc/AAEAAQAAAAAAAAH2AAAAJGQyYWMwMTI0LTZkMzMtNDljNC04NDM5LWYyMjQ4NGEyMGE3MA.jpg",
   "http://kingofwallpapers.com/profile-pics/profile-pics-007.jpg",
   "http://2.bp.blogspot.com/-dZKdgsUW2y0/Une2h3IIVMI/AAAAAAAAC1o/tqJJFHKzHfY/s1600/katrina-kaif-Complete-Profile.jpg",
-  "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSKUdsXnCb--XC0CK94IO934W9tfoatmAjBAEOsJOvhIULQmcUd",
-  "http://www.celebbra.com/wp-content/uploads/2016/01/Nayantara-Height-Weight-Bra-Pics-Profile.jpg"
+  "http://www.celebbra.com/wp-content/uploads/2016/01/Nayantara-Height-Weight-Bra-Pics-Profile.jpg",
+  "http://i.dailymail.co.uk/i/pix/2016/05/23/22/348B850600000578-3605456-image-m-32_1464040491071.jpg"
 ]
 
 5.times { User.create(
