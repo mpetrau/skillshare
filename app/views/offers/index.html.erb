@@ -17,6 +17,10 @@
         <div class='product-body'>
           <h3><%= offer.title.upcase %></h3>
           <p><%= truncate offer.description, length: 100 %>...</p>
+            <div><% offer.average.times do %>
+             <i class="fa fa-star" aria-hidden="true" style="color: yellow;" ></i>
+              <% end %>
+            </div>
         </div>
 <!--         <ul class="list-inline product-controls product-controls-hidden hidden-sm hidden-xs">
           <li><a href=""><i class="fa fa-heart"></i></a></li>

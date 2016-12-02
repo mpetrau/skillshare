@@ -1,6 +1,19 @@
-<%= simple_form_for [@offer, @review] do |f| %>
-  <%= f.input :title %>
-  <%= f.input :description %>
-  <%= f.input :rating %>
-  <%= f.submit "Add Review", class: "btn btn-primary" %>
-<% end %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4 col-sm-offset-4">
+      <%= simple_form_for [@offer, @review] do |f| %>
+      <div class="form-inputs" id="form-background">
+        <h2 class="text-center">Write a Review</h2>
+        <%=  %>
+        <%= f.input :title %>
+        <%= f.input :description %>
+        <%= f.input :rating, input_html: { min: '1', max: '5', step: 'any' } %>
+        <div class="form-actions">
+         <%= f.button :submit, "Write Review", class: "form-button"%>
+       </div>
+       <% end %>
+     </div>
+   </div>
+ </div>
+</div>
