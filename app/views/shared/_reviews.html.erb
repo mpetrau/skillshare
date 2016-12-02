@@ -1,0 +1,21 @@
+
+<div class="padded-sides page-header">
+  <h1>Customer Reviews</h1>
+</div>
+<div class="row">
+  <% @offer.reviews.each do |review| %>
+  <div>
+    <div class="card">
+      <div class="card-stars">
+       <% review.rating.times do %>
+       <i class="fa fa-star" aria-hidden="true" style="color: yellow;" ></i>
+       <% end %>
+     </div>
+     <div class="card-description">
+      <h2><%= review.title %></h2>
+      <p><%= review.description %></p>
+      </div>
+  </div>
+</div>
+<% end %>
+</div>
