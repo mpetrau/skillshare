@@ -1,9 +1,9 @@
 require 'faker'
 
-# Review.destroy_all
-# Booking.destroy_all
-# Offer.destroy_all
-# User.destroy_all
+Review.destroy_all
+Booking.destroy_all
+Offer.destroy_all
+User.destroy_all
 
 addresses = [
   {address: "89, Av. de Josep Tarradellas", zip_code: "08029", city: "Barcelona", country: "ES"},
