@@ -25,6 +25,16 @@ ActiveRecord::Schema.define(version: 20161202020741) do
     t.index ["user_id"], name: "index_bookings_on_user_id", using: :btree
   end
 
+  create_table "offer_reviews", force: :cascade do |t|
+    t.string   "title"
+    t.string   "description"
+    t.integer  "rating"
+    t.integer  "offer_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["offer_id"], name: "index_offer_reviews_on_offer_id", using: :btree
+  end
+
   create_table "offers", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "price"
@@ -51,6 +61,15 @@ ActiveRecord::Schema.define(version: 20161202020741) do
     t.datetime "updated_at",  null: false
     t.integer  "booking_id"
     t.index ["booking_id"], name: "index_reviews_on_booking_id", using: :btree
+  end
+
+  create_table "user_reviews", force: :cascade do |t|
+    t.string   "title"
+    t.string   "description"
+    t.integer  "user_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["user_id"], name: "index_user_reviews_on_user_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
@@ -81,6 +100,8 @@ ActiveRecord::Schema.define(version: 20161202020741) do
 
   add_foreign_key "bookings", "offers"
   add_foreign_key "bookings", "users"
+  add_foreign_key "offer_reviews", "offers"
   add_foreign_key "offers", "users"
   add_foreign_key "reviews", "bookings"
+  add_foreign_key "user_reviews", "users"
 end
