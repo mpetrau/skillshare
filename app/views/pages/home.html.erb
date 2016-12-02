@@ -1,3 +1,19 @@
+<% featuredcard = lambda do |offers| %>
+  <% offers.each do |offer| %>
+      <div class="product bordered">
+        <%= image_tag offer.user.photo.url(:bright_face), class: "img-responsive hidden-xs avatar-square-large"  %>
+        <div class='product-body'>
+          <h3><%= offer.title.upcase %></h3>
+          <div><% offer.average.times do %>
+             <i class="fa fa-star" aria-hidden="true" style="color: yellow;" ></i>
+              <% end %>
+            </div>
+        </div>
+        <%= link_to '', offer_path(offer), class: "card-link" %>
+      </div>
+      <% end %>
+  <% end %>
+
 <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.01) 0%, rgba(0,36,61,0.01) 50%), url(<%= image_path "paper.png" %>);">
   <div class="container">
     <div class="row">
@@ -11,6 +27,58 @@
     </div>
   </div>
 </div>
-  <%= content_for(:after_js) do %>
-        <script src="https://maps.googleapis.com/maps/api/js?libraries=places&amp;key=<%=ENV['GOOGLE_API_BROWSER_KEY'] %>"></script>
-  <% end %>
+
+<div class="container background-white">
+  <div class="row padded-sides">
+
+    <div class="col-md-3">
+      <br>
+      <div class="info"><h1>Find a mentor!</h1></div>
+      <br>
+      <div class="info"><h1>Teach others and earn!</h1></div>
+      <br>
+      <div class="info"><h1>Meet great people around!</h1></div>
+      <br>
+    </div>
+    <div class="col-md-4 col-md-offset-1">
+      <div class="page-header"><h1>Check the featured</h1></div>
+      <% featuredcard.call @featured.first(5) %>
+    </div>
+    <% if @all_bookings.nil? %>
+    <div class="col-md-4 margin-top-header">
+      <% featuredcard.call @featured.drop(5).first(5) %>
+    </div>
+    <% end %>
+
+    <% unless @all_bookings.nil? %>
+    <div class="col-md-4">
+      <div class="page-header"><h1>You booked recently</h1></div>
+      <% @all_bookings.each do |booking| %>
+      <div class="booking-card bordered">
+        <div class="booking-content">
+          <% if booking.user == current_user %>
+          <div class="booking-user">
+            <%= image_tag booking.offer.user.photo.url(:bright_face), class: "img-responsive avatar-large" %>
+          </div>
+          <div class="booking-title">
+            <p><b>Learning</b> with <%=  booking.offer.user.name %> (<%= booking.date %>)</p>
+          </div>
+          <% else  %>
+          <div class="booking-user">
+            <%= image_tag booking.user.photo.url(:bright_face), class: "img-responsive avatar-large" %>
+          </div>
+          <div class="booking-title">
+            <p><b>Teaching</b> <%=  booking.user.name %> (<%= booking.date %>)</p>
+          </div>
+          <% end %>
+          <div class="booking-content">
+            <h3> #<%= booking.offer.category %>: <%= booking.offer.title %></h3>
+          </div>
+        </div>
+        <%= link_to '', offer_path(booking.offer), class: "booking-link" %>
+      </div>
+      <% end %>
+    </div>
+    <% end %>
+  </div>
+</div>

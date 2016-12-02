@@ -2,3 +2,30 @@
  * CSS code specific to home page
  * (margin/padding adjustments)
  * ------------------------------------- */
+
+.info{
+  height: 250px;
+  width: 250px;
+  border-radius: 50%;
+  padding: 20px;
+  display: table-cell;
+  background-color: $blue;
+  text-align: center;
+  vertical-align: middle;
+  color: $yellow;
+  font-size: 75%;
+  font-weight: lighter;
+}
+
+.max-height-set{
+  max-height: 300px;
+}
+
+.max-height-fill{
+  max-height: 100%;
+  overflow: hidden;
+}
+
+.margin-top-header{
+  margin-top: 135px;
+}
