@@ -1,6 +1,6 @@
 <%= simple_form_for offers_path, url: url_for(action: 'index', controller: 'offers'), :method => 'get' do |f| %>
 <%= f.input :category, as: :select, collection: Offer::SKILLS_CATS, label: false, selected: @category, input_html: { class: 'input-lg' } %>
-<%= f.input :location, as: :string, placeholder: "Barcelona", label: false, input_html: { class: 'input-lg location_search' } %>
+<%= f.input :location, as: :string, placeholder: "Enter city", label: false, input_html: { class: 'input-lg location_search' } %>
 <%= f.button :submit, "Search", class: "btn btn-danger btn-lg" %>
 <% end %>
 
