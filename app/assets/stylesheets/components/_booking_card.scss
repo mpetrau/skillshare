@@ -55,6 +55,8 @@
   background: black;
   opacity: 0;
 }
-.booking-link:hover{
-  opacity: 0.1;
+.booking-card:hover {
+  cursor: pointer;
+  box-shadow: 1px 1px 5px $brand-color;
+  transform: scale(1.1)
 }
