@@ -1,16 +1,9 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 
-Review.destroy_all
-Booking.destroy_all
-Offer.destroy_all
-User.destroy_all
+# Review.destroy_all
+# Booking.destroy_all
+# Offer.destroy_all
+# User.destroy_all
 
 addresses = [
   {address: "89, Av. de Josep Tarradellas", zip_code: "08029", city: "Barcelona", country: "ES"},
@@ -28,36 +21,38 @@ photos = [
   "http://www.celebbra.com/wp-content/uploads/2016/01/Nayantara-Height-Weight-Bra-Pics-Profile.jpg"
 ]
 
-# 1.times { User.create(
-#   email: Faker::Internet.email,
-#   password: "password1",
-#   remote_photo_url: photos[rand(0..4)],
-#   name: Faker::Name.first_name,
-#   first_name: :name
-#   )}
+5.times { User.create(
+  email: Faker::Internet.email,
+  password: "password1",
+  remote_photo_url: photos[rand(0..4)],
+  name: Faker::Name.first_name,
+  first_name: Faker::Name.first_name,
+  )}
 
-# 1.times { Offer.create(
-#   user_id: User.offset(rand(User.count)).first.id,
-#   price: rand(15..100),
-#   title: (Faker::Hipster.words(3)).join(" "),
-#   description: (Faker::Hipster.sentences).join(" "),
-#   seniority: Offer::SENIORITY[rand(0..Offer::SENIORITY.length)],
-#   category: Offer::SKILLS_CATS[rand(0..Offer::SKILLS_CATS.length)],
-#   address: address[rand(0..4)].address,
-#   zip_code: address[rand(0..4)].zip_code,
-#   city: address[rand(0..4)].city,
-#   country: address[rand(0..4)].country
-#   )}
+10.times {
+  num = rand(0..4)
+  Offer.create(
+  user_id: User.offset(rand(User.count)).first.id,
+  price: rand(15..100),
+  title: (Faker::Hipster.words(3)).join(" "),
+  description: (Faker::Hipster.sentences).join(" "),
+  seniority: Offer::SENIORITY[rand(0..Offer::SENIORITY.length)],
+  category: Offer::SKILLS_CATS[rand(0..Offer::SKILLS_CATS.length)],
+  address: addresses[num][:address],
+  zip_code: addresses[num][:zip_code],
+  city: addresses[num][:city],
+  country: addresses[num][:country]
+  )}
 
-# 1.times { Booking.create(
-#   user_id: User.offset(rand(User.count)).first.id,
-#   offer_id: Offer.offset(rand(Offer.count)).first.id,
-#   date: Faker::Date.between(1.month.ago, 1.month.from_now)
-#   )}
+25.times { Booking.create(
+  user_id: User.offset(rand(User.count)).first.id,
+  offer_id: Offer.offset(rand(Offer.count)).first.id,
+  date: Faker::Date.between(1.month.ago, 1.month.from_now)
+  )}
 
-# 1.times { Review.create(
-#   booking_id: Booking.offset(rand(Booking.count)).first.id,
-#   title: (Faker::Hipster.words(3)).join(" "),
-#   description: (Faker::Hipster.sentences).join(" "),
-#   rating: rand(1..5)
-#   )}
+20.times { Review.create(
+  booking_id: Booking.offset(rand(Booking.count)).first.id,
+  title: (Faker::Hipster.words(3)).join(" "),
+  description: (Faker::Hipster.sentences).join(" "),
+  rating: rand(1..5)
+  )}
