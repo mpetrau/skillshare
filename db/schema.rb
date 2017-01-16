@@ -49,10 +49,8 @@ ActiveRecord::Schema.define(version: 20161202153649) do
     t.integer  "rating"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.integer  "user_id"
     t.integer  "offer_id"
     t.index ["offer_id"], name: "index_reviews_on_offer_id", using: :btree
-    t.index ["user_id"], name: "index_reviews_on_user_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
@@ -85,5 +83,4 @@ ActiveRecord::Schema.define(version: 20161202153649) do
   add_foreign_key "bookings", "users"
   add_foreign_key "offers", "users"
   add_foreign_key "reviews", "offers"
-  add_foreign_key "reviews", "users"
 end
